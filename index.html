@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memories</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Scada@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="h1-title_hidden">Карточная игра</h1>
+    <div class="app">
+      <form class="form-start" action="">
+        <h2 class="h2-title">Выбери сложность</h2>
+
+        <div class="difficulty">
+          <input
+            class="difficulty__level"
+            type="radio"
+            id="level1"
+            name="difficulty"
+            value="1"
+          />
+          <label class="difficulty__level_label" for="level1">1 </label>
+
+          <input
+            class="difficulty__level"
+            type="radio"
+            id="level2"
+            name="difficulty"
+            value="2"
+          />
+          <label class="difficulty__level_label" for="level2">2 </label>
+
+          <input
+            class="difficulty__level"
+            type="radio"
+            id="level3"
+            name="difficulty"
+            value="3"
+          />
+          <label class="difficulty__level_label" for="level3">3 </label>
+        </div>
+
+        <button class="difficulty__button">Старт</button>
+      </form>
+    </div>
+  </body>
+</html>
