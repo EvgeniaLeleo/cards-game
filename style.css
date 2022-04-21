@@ -46,7 +46,7 @@ body {
   height: 100vh;
 }
 
-.form-start {
+.form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,11 +120,22 @@ body {
   background-color: #7ac100;
   border: #7ac100;
   border-radius: 12px;
-  padding: 10px 90px;
+  padding: 10px 30px;
+  min-width: 246px;
   cursor: pointer;
 }
 
 .difficulty__button:hover {
   background-color: #6eae00;
 }
+
+.message {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #004980;
+}
+
 /*# sourceMappingURL=style.css.map */
