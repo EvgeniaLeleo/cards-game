@@ -85,9 +85,14 @@ function generateGameScreen(container) {
  */
 
 function generateCards(container) {
+  container.style.width = 6 * 95 + 5 * 15 + 'px';
+  container.style.height =
+    window.app.level * 133 + (window.app.level - 1) * 15 + 'px';
+
   for (let i = 0; i < 6 * window.app.level; i++) {
-    const card = document.createElement('img');
+    const card = document.createElement('div');
     card.classList.add('card');
+    card.style.background = '#dddddd';
     container.appendChild(card);
   }
 }
