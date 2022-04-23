@@ -65,13 +65,16 @@ body {
 
   &__win,
   &__lose {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
 
     padding: 30px 69px;
+
+    animation-name: zoom;
+    animation-duration: 0.1s;
 
     & .h2-title {
       margin-bottom: 28px;
@@ -188,6 +191,8 @@ body {
   border-radius: 50%;
   width: 40px;
   height: 40px;
+
+  transition: all 0.2s;
 }
 
 .cards-container {
@@ -298,4 +303,15 @@ body {
   color: #000000;
 
   margin-bottom: 40px;
+}
+
+@keyframes zoom {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
