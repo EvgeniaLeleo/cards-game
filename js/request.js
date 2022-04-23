@@ -34,7 +34,7 @@ function showData(data) {
 
   window.app.stopwatch = setInterval(increaseTime, 1000, window.app); // запуск секундомера
 
-  window.app.delay = setTimeout(hideCards, 500); // время показа карт
+  window.app.delay = setTimeout(hideCards, 5000); // время показа карт
 
   showCard(); // перевернуть карту (ниже)
 }
