@@ -1,146 +1,218 @@
 [
   {
     "name": "diamonds6",
-    "img": "img/diamonds6.png"
+    "text": "6",
+    "img": "img/diamonds6.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamonds7",
-    "img": "img/diamonds7.png"
+    "text": "7",
+    "img": "img/diamonds7.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamonds8",
-    "img": "img/diamonds8.png"
+    "text": "8",
+    "img": "img/diamonds8.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamonds9",
-    "img": "img/diamonds9.png"
+    "text": "9",
+    "img": "img/diamonds9.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamonds10",
-    "img": "img/diamonds10.png"
+    "text": "10",
+    "img": "img/diamonds10.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamondsJ",
-    "img": "img/diamonds-j.png"
+    "text": "J",
+    "img": "img/diamonds-j.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamonds-Q",
-    "img": "img/diamonds-q.png"
+    "text": "Q",
+    "img": "img/diamonds-q.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamondsK",
-    "img": "img/diamonds-k.png"
+    "text": "K",
+    "img": "img/diamonds-k.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "diamondsA",
-    "img": "img/diamonds-a.png"
+    "text": "A",
+    "img": "img/diamonds-a.png",
+    "suit": "img/diamonds.png"
   },
   {
     "name": "spades6",
-    "img": "img/spades6.png"
+    "text": "6",
+    "img": "img/spades6.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spades7",
-    "img": "img/spades7.png"
+    "text": "7",
+    "img": "img/spades7.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spades8",
-    "img": "img/spades8.png"
+    "text": "8",
+    "img": "img/spades8.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spades9",
-    "img": "img/spades9.png"
+    "text": "9",
+    "img": "img/spades9.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spades10",
-    "img": "img/spades10.png"
+    "text": "10",
+    "img": "img/spades10.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spadesJ",
-    "img": "img/spades-j.png"
+    "text": "J",
+    "img": "img/spades-j.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spades-Q",
-    "img": "img/spades-q.png"
+    "text": "Q",
+    "img": "img/spades-q.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spadesK",
-    "img": "img/spades-k.png"
+    "text": "K",
+    "img": "img/spades-k.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "spadesA",
-    "img": "img/spades-a.png"
+    "text": "A",
+    "img": "img/spades-a.png",
+    "suit": "img/spades.png"
   },
   {
     "name": "hearts6",
-    "img": "img/hearts6.png"
+    "text": "6",
+    "img": "img/hearts6.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "hearts7",
-    "img": "img/hearts7.png"
+    "text": "7",
+    "img": "img/hearts7.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "hearts8",
-    "img": "img/hearts8.png"
+    "text": "8",
+    "img": "img/hearts8.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "hearts9",
-    "img": "img/hearts9.png"
+    "text": "9",
+    "img": "img/hearts9.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "hearts10",
-    "img": "img/hearts10.png"
+    "text": "10",
+    "img": "img/hearts10.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "heartsJ",
-    "img": "img/hearts-j.png"
+    "text": "J",
+    "img": "img/hearts-j.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "hearts-Q",
-    "img": "img/hearts-q.png"
+    "text": "Q",
+    "img": "img/hearts-q.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "heartsK",
-    "img": "img/hearts-k.png"
+    "text": "K",
+    "img": "img/hearts-k.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "heartsA",
-    "img": "img/hearts-a.png"
+    "text": "A",
+    "img": "img/hearts-a.png",
+    "suit": "img/hearts.png"
   },
   {
     "name": "clubs6",
-    "img": "img/clubs6.png"
+    "text": "6",
+    "img": "img/clubs6.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubs7",
-    "img": "img/clubs7.png"
+    "text": "7",
+    "img": "img/clubs7.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubs8",
-    "img": "img/clubs8.png"
+    "text": "8",
+    "img": "img/clubs8.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubs9",
-    "img": "img/clubs9.png"
+    "text": "9",
+    "img": "img/clubs9.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubs10",
-    "img": "img/clubs10.png"
+    "text": "10",
+    "img": "img/clubs10.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubsJ",
-    "img": "img/clubs-j.png"
+    "text": "J",
+    "img": "img/clubs-j.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubs-Q",
-    "img": "img/clubs-q.png"
+    "text": "Q",
+    "img": "img/clubs-q.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubsK",
-    "img": "img/clubs-k.png"
+    "text": "K",
+    "img": "img/clubs-k.png",
+    "suit": "img/clubs.png"
   },
   {
     "name": "clubsA",
-    "img": "img/clubs-a.png"
+    "text": "A",
+    "img": "img/clubs-a.png",
+    "suit": "img/clubs.png"
   }
 ]

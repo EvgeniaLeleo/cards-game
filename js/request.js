@@ -34,7 +34,7 @@ function showData(data) {
 
   window.app.stopwatch = setInterval(increaseTime, 1000, window.app); // запуск секундомера
 
-  window.app.delay = setTimeout(hideCards, 5000); // время показа карт
+  window.app.delay = setTimeout(hideCards, 500); // время показа карт
 
   showCard(); // перевернуть карту (ниже)
 }
@@ -47,8 +47,7 @@ function generateCardsContent(data) {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
-    imgs[i].setAttribute('src', data[i].img);
-    imgs[i].setAttribute('alt', `${data[i].name}`);
+    imgs[i].innerHTML = cardTemplate(data[i]);
   }
 }
 
@@ -82,8 +81,7 @@ function hideCards() {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
-    imgs[i].setAttribute('src', 'img/back.png');
-    imgs[i].setAttribute('alt', 'Card back');
+    imgs[i].innerHTML = '<img src="img/back.png" alt="Card back" />';
     imgs[i].style.transform = 'rotateY(-180deg) scale(-1, 1)';
     imgs[i].setAttribute('style', 'pointer-events: auto;');
     imgs[i].style.cursor = 'pointer';
@@ -99,8 +97,8 @@ function showCard() {
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].addEventListener('click', () => {
-      imgs[i].setAttribute('src', window.app.cards[i].img);
-      imgs[i].setAttribute('alt', `${window.app.cards[i].name}`);
+      imgs[i].innerHTML = cardTemplate(window.app.cards[i]);
+
       imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
 
       // добавляем пару выбранных карт в window.app.userCards
