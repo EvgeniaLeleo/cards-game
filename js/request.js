@@ -48,6 +48,7 @@ function generateCardsContent(data) {
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].innerHTML = cardTemplate(data[i]);
+    imgs[i].style.transform = 'rotateY(-180deg) scale(-1, 1)';
   }
 }
 
@@ -98,18 +99,22 @@ function showCard() {
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].addEventListener('click', () => {
       imgs[i].innerHTML = cardTemplate(window.app.cards[i]);
-
       imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
 
       // добавляем пару выбранных карт в window.app.userCards
-      if (!window.app.userCards[0]) {
+      if (!window.app.userCards[0] && !window.app.userTargets.includes(i)) {
         window.app.userCards[0] = window.app.cards[i].name;
-      } else {
-        window.app.userCards[1] = window.app.cards[i].name;
+        window.app.userTargets.push(i);
+      }
 
-        //если карты не совпадают, обнуляем список выбранных карт и угаданных пар
+      if (window.app.userCards[0] && !window.app.userTargets.includes(i)) {
+        window.app.userCards[1] = window.app.cards[i].name;
+        window.app.userTargets.push(i);
+
+        //если карты не совпадают, обнуляем все результаты
         if (window.app.userCards[0] !== window.app.userCards[1]) {
           window.app.userCards = [];
+          window.app.userTargets = [];
           window.app.pairs = [];
 
           const attempts = document.querySelectorAll('.attempt');
@@ -118,7 +123,7 @@ function showCard() {
           window.app.attempts++;
 
           if (window.app.attempts === 3) {
-            generateLoseScreen();
+            setTimeout(generateLoseScreen, 400);
           }
 
           setTimeout(hideCards, 400);
@@ -138,7 +143,7 @@ function showCard() {
           if (window.app.pairs.length === window.app.level * 3) {
             clearInterval(window.app.stopwatch);
 
-            generateWinScreen();
+            setTimeout(generateWinScreen, 400);
           }
         }
       }

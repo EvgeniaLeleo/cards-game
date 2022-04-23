@@ -6,6 +6,7 @@ function generateGameScreen(container) {
   window.app.time = [0, 0];
   window.app.pairs = [];
   window.app.userCards = [];
+  window.app.userTargets = [];
   window.app.attempts = 0;
 
   clearTimeout(window.app.delay);
