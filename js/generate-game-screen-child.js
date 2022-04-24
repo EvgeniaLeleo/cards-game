@@ -81,9 +81,25 @@ function generateGameScreenChild(container) {
  */
 
 function generateCardsChild(container) {
-  container.style.width = 6 * 120 + 5 * 10 + 'px';
-  container.style.height =
-    window.app.level * 120 + (window.app.level - 1) * 10 + 'px';
+  const cardsContainer = document.querySelector('.cards-container-child');
+
+  if (Number(window.app.level) === 1) {
+    container.style.width = 3 * 150 + 2 * 15 + 'px';
+    container.style.height = 2 * 150 + 15 + 'px';
+    cardsContainer.classList.add('cards-container-child_1');
+  }
+
+  if (Number(window.app.level) === 2) {
+    container.style.width = 4 * 120 + 3 * 15 + 'px';
+    container.style.height = 3 * 120 + 2 * 15 + 'px';
+    cardsContainer.classList.add('cards-container-child_2');
+  }
+
+  if (Number(window.app.level) === 3) {
+    container.style.width = 6 * 120 + 5 * 15 + 'px';
+    container.style.height = 3 * 120 + 2 * 15 + 'px';
+    cardsContainer.classList.add('cards-container-child_3');
+  }
 
   for (let i = 0; i < 6 * window.app.level; i++) {
     const card = document.createElement('div');

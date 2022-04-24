@@ -213,10 +213,23 @@ body {
 
 .cards-container-child {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+
   gap: 15px;
 
-  width: 100%;
+  &_1 {
+    grid-template-columns: repeat(3, 1fr);
+
+    & .img-child {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  &_2 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &_3 {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .card {

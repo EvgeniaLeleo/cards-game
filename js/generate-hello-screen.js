@@ -61,7 +61,7 @@ function generateHelloScreen(container) {
 
   userAges.forEach((userAge) => {
     userAge.addEventListener('click', () => {
-      buttonStart.textContent = 'Старт';
+      buttonStart.textContent = 'Играть';
       buttonStart.style.background = '#7ac100';
 
       difficultyLevelLabels.forEach((label) => {
