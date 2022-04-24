@@ -15,7 +15,7 @@ function requestFunctionChild() {
     } else {
       const data = JSON.parse(request.response);
 
-      showData(data);
+      showDataChild(data);
     }
   };
 }
@@ -24,26 +24,26 @@ function requestFunctionChild() {
  * Вывод данных data из файла *.json в карточки
  */
 
-function showData(data) {
+function showDataChild(data) {
   const shuffledData = shuffle(data);
   const randomCards = shuffledData.splice(0, window.app.level * 3);
 
   window.app.cards = shuffle(doubleArr(randomCards));
 
-  generateCardsContent(window.app.cards);
+  generateCardsContentChild(window.app.cards);
 
   window.app.stopwatch = setInterval(increaseTime, 1000, window.app); // запуск секундомера
 
-  window.app.delay = setTimeout(hideCards, 5000); // время показа карт
+  window.app.delay = setTimeout(hideCardsChild, 5000); // время показа карт
 
-  showCard(); // перевернуть карту (ниже)
+  showCardChild(); // перевернуть карту (ниже)
 }
 
 /**
  * Заполнение n карт данными из массива data = shuffle(doubleCards)
  */
 
-function generateCardsContent(data) {
+function generateCardsContentChild(data) {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
@@ -55,32 +55,10 @@ function generateCardsContent(data) {
 }
 
 /**
- *Дублирование элементов массива
- */
-
-function doubleArr(a) {
-  return a.concat(a);
-}
-
-/**
- * Перемешивание элементов массива
- */
-
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1)); // случайный индекс от 0 до i
-
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-
-  return array;
-}
-
-/**
  * Переворачиваем карты рубашкой вверх
  */
 
-function hideCards() {
+function hideCardsChild() {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
@@ -96,7 +74,7 @@ function hideCards() {
  * Открываем карту по клику
  */
 
-function showCard() {
+function showCardChild() {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
@@ -122,7 +100,7 @@ function showCard() {
           window.app.userTargets = [];
           window.app.pairs = [];
 
-          setTimeout(hideCards, 400);
+          setTimeout(hideCardsChild, 400);
         }
 
         //если карты совпадают, добавляем в список угаданных пар
