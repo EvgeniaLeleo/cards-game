@@ -105,45 +105,53 @@ body {
   }
 }
 
-.difficulty {
+.label {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #0080c1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 98px;
+  height: 98px;
+
+  background-color: #ffffff;
+  border-radius: 12px;
+
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #ffffff;
+    background-color: #0080c1;
+  }
+}
+
+.radio {
+  visibility: hidden;
+  position: absolute;
+}
+
+.difficulty,
+.age {
   display: flex;
   justify-content: space-between;
 
   width: 100%;
   margin-bottom: 67px;
-
-  &__level {
-    visibility: hidden;
-    position: absolute;
-
-    &_label {
-      font-size: 64px;
-      font-weight: 400;
-      line-height: 72px;
-      letter-spacing: 0px;
-      text-align: center;
-      color: #0080c1;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 98px;
-      height: 98px;
-
-      background-color: #ffffff;
-      border-radius: 12px;
-
-      cursor: pointer;
-      transition: all 0.2s;
-
-      &:hover {
-        color: #ffffff;
-        background-color: #0080c1;
-      }
-    }
-  }
 }
+
+.age {
+  justify-content: center;
+  gap: 25px;
+}
+
+// GAME SCREEN
 
 .header {
   display: flex;
@@ -196,6 +204,14 @@ body {
 }
 
 .cards-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+
+  width: 100%;
+}
+
+.cards-container-child {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 15px;
@@ -258,6 +274,10 @@ body {
   &__center {
     align-self: center;
   }
+
+.img-child {
+  width: 120px;
+  height: 120px;
 }
 
 .shadow {

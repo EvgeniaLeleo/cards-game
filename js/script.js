@@ -7,11 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     pairs: [], // Угаданные пары
     attempts: 0, // Попытки
 
+    // age, // Возраст игрока
     // level,  Выбранный уровень сложности
     // stopwatch, Секундомер
   };
 
   const screenContainer = document.querySelector('.screen-container');
 
-  generateStartScreen(screenContainer);
+  generateHelloScreen(screenContainer);
 });
