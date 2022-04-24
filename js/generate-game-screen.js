@@ -86,9 +86,26 @@ function generateGameScreen(container) {
  */
 
 function generateCards(container) {
-  container.style.width = 6 * 95 + 5 * 15 + 'px';
-  container.style.height =
-    window.app.level * 133 + (window.app.level - 1) * 15 + 'px';
+  const header = document.querySelector('.header');
+  const cardsContainer = document.querySelector('.cards-container');
+  cardsContainer.classList.add(`cards-container_${window.app.level}`);
+
+  if (window.app.level === '1') {
+    header.style.width = '600px';
+    container.style.width = 3 * 95 + 2 * 15 + 'px';
+    container.style.height = 2 * 133 + 1 * 15 + 'px';
+  }
+
+  if (window.app.level === '2') {
+    header.style.width = '600px';
+    container.style.width = 4 * 95 + 3 * 15 + 'px';
+    container.style.height = 3 * 133 + 2 * 15 + 'px';
+  }
+
+  if (window.app.level === '3') {
+    container.style.width = 6 * 95 + 5 * 15 + 'px';
+    container.style.height = 3 * 133 + 2 * 15 + 'px';
+  }
 
   for (let i = 0; i < 6 * window.app.level; i++) {
     const card = document.createElement('div');
