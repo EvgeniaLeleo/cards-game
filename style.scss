@@ -208,13 +208,22 @@ body {
   grid-template-columns: repeat(6, 1fr);
   gap: 15px;
 
-  width: 100%;
+  &_1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &_2 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &_3 {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .cards-container-child {
   display: grid;
-
   gap: 15px;
+
+  width: 100%;
 
   &_1 {
     grid-template-columns: repeat(3, 1fr);

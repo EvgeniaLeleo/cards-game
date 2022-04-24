@@ -233,13 +233,28 @@ body {
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
   gap: 15px;
-  width: 100%;
+}
+
+.cards-container_1 {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-container_2 {
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.cards-container_3 {
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
 }
 
 .cards-container-child {
   display: -ms-grid;
   display: grid;
   gap: 15px;
+  width: 100%;
 }
 
 .cards-container-child_1 {
