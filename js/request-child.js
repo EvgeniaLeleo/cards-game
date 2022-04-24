@@ -2,10 +2,10 @@
  * Запрос данных из файла cards.json и вывод их на текущую страницу в карты
  */
 
-function requestFunction() {
+function requestFunctionChild() {
   const request = new XMLHttpRequest();
 
-  request.open('GET', 'cards.json');
+  request.open('GET', 'cards-child.json');
 
   request.send();
 
@@ -47,7 +47,9 @@ function generateCardsContent(data) {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
-    imgs[i].innerHTML = cardTemplate(data[i]);
+    imgs[
+      i
+    ].innerHTML = `<img class="img-child" src="${data[i].img}" alt="${data[i].name}" />`;
     imgs[i].style.transform = 'rotateY(-180deg) scale(-1, 1)';
   }
 }
@@ -82,7 +84,8 @@ function hideCards() {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
-    imgs[i].innerHTML = '<img src="img/back.png" alt="Card back" />';
+    imgs[i].innerHTML =
+      '<img class="img-child" src="img/back.png" alt="Card back" />';
     imgs[i].style.transform = 'rotateY(-180deg) scale(-1, 1)';
     imgs[i].setAttribute('style', 'pointer-events: auto;');
     imgs[i].style.cursor = 'pointer';
@@ -98,7 +101,9 @@ function showCard() {
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].addEventListener('click', () => {
-      imgs[i].innerHTML = cardTemplate(window.app.cards[i]);
+      imgs[
+        i
+      ].innerHTML = `<img class="img-child" src="${window.app.cards[i].img}" alt="${window.app.cards[i].name}" />`;
       imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
 
       // добавляем пару выбранных карт в window.app.userCards
@@ -116,15 +121,6 @@ function showCard() {
           window.app.userCards = [];
           window.app.userTargets = [];
           window.app.pairs = [];
-
-          const attempts = document.querySelectorAll('.attempt');
-          attempts[window.app.attempts].style.background = '#c14a00';
-
-          window.app.attempts++;
-
-          if (window.app.attempts === 3) {
-            setTimeout(generateLoseScreen, 400);
-          }
 
           setTimeout(hideCards, 400);
         }

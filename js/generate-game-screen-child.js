@@ -1,8 +1,8 @@
 /**
- * Генерация экрана игры
+ * Генерация экрана детской игры
  */
 
-function generateGameScreen(container) {
+function generateGameScreenChild(container) {
   window.app.time = [0, 0];
   window.app.pairs = [];
   window.app.userCards = [];
@@ -54,7 +54,7 @@ function generateGameScreen(container) {
   buttonRepeat.textContent = 'Начать заново';
 
   const cardsContainer = document.createElement('div');
-  cardsContainer.classList.add('cards-container');
+  cardsContainer.classList.add('cards-container-child');
 
   container.appendChild(header);
   header.appendChild(timer);
@@ -64,16 +64,11 @@ function generateGameScreen(container) {
   timer.appendChild(dot);
   timer.appendChild(sek);
 
-  header.appendChild(attempts);
-  attempts.appendChild(attempt1);
-  attempts.appendChild(attempt2);
-  attempts.appendChild(attempt3);
-
   header.appendChild(buttonRepeat);
   container.appendChild(cardsContainer);
 
-  generateCards(cardsContainer); // Вывод карт на экран
-  requestFunction();
+  generateCardsChild(cardsContainer); // Вывод картинок на экран
+  requestFunctionChild();
 
   buttonRepeat.addEventListener('click', () => {
     container.innerHTML = '';
@@ -82,13 +77,13 @@ function generateGameScreen(container) {
 }
 
 /**
- * Генерация и вывод карт на экран
+ * Генерация и вывод картинок на экран
  */
 
-function generateCards(container) {
-  container.style.width = 6 * 95 + 5 * 15 + 'px';
+function generateCardsChild(container) {
+  container.style.width = 6 * 120 + 5 * 10 + 'px';
   container.style.height =
-    window.app.level * 133 + (window.app.level - 1) * 15 + 'px';
+    window.app.level * 120 + (window.app.level - 1) * 10 + 'px';
 
   for (let i = 0; i < 6 * window.app.level; i++) {
     const card = document.createElement('div');

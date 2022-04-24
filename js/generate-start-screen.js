@@ -6,10 +6,13 @@ function generateStartScreen(container) {
   window.app.time = [0, 0];
   window.app.pairs = [];
   window.app.userCards = [];
+  window.app.userTargets = [];
   window.app.attempts = 0;
 
   clearTimeout(window.app.delay);
   clearInterval(window.app.stopwatch);
+
+  container.innerHTML = '';
 
   const formStart = document.createElement('form');
   formStart.classList.add('form', 'form__start');
@@ -27,14 +30,14 @@ function generateStartScreen(container) {
 
   for (let i = 0; i < 3; i++) {
     const difficultyLevel = document.createElement('input');
-    difficultyLevel.classList.add('difficulty__level');
+    difficultyLevel.classList.add('difficulty__level', 'radio');
     difficultyLevel.type = 'radio';
     difficultyLevel.id = `level${i + 1}`;
     difficultyLevel.name = 'difficulty';
     difficultyLevel.value = `${i + 1}`;
 
     const label = document.createElement('label');
-    label.classList.add('difficulty__level_label');
+    label.classList.add('difficulty__level_label', 'label');
     label.setAttribute('for', `level${i + 1}`);
     label.textContent = `${i + 1}`;
 
@@ -82,7 +85,12 @@ function generateStartScreen(container) {
       if (difficultyLevels[i].checked) {
         window.app.level = difficultyLevels[i].value;
 
-        generateGameScreen(container);
+        if (Number(window.app.age) === 1) {
+          generateGameScreenChild(container);
+        }
+        if (Number(window.app.age) === 2) {
+          generateGameScreen(container);
+        }
 
         break;
       } else {
