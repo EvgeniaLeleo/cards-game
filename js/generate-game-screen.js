@@ -3,8 +3,8 @@
  */
 
 function generateGameScreen(container) {
-  window.app.time = [0, 0];
-  window.app.pairs = [];
+  window.app.userTimeSekMin = [0, 0];
+  window.app.guessedPairs = [];
   window.app.userCards = [];
   window.app.userTargets = [];
   window.app.attempts = 0;
