@@ -19,7 +19,7 @@ function generateStartScreen(container) {
 
   const h2Title = document.createElement('h2');
   h2Title.classList.add('h2-title');
-  h2Title.textContent = 'Выбери сложность';
+  h2Title.textContent = 'Выберите сложность';
 
   const difficulty = document.createElement('div');
   difficulty.classList.add('difficulty');
@@ -115,7 +115,7 @@ function generateStartScreen(container) {
 
         break;
       } else {
-        buttonStart.textContent = 'Вы не выбрали уровень!';
+        buttonStart.textContent = 'Выберите уровень!';
         buttonStart.style.background = '#c14a00';
       }
     }
