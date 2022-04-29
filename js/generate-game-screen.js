@@ -3,8 +3,8 @@
  */
 
 function generateGameScreen(container) {
-  window.app.time = [0, 0];
-  window.app.pairs = [];
+  window.app.userTimeSekMin = [0, 0];
+  window.app.guessedPairs = [];
   window.app.userCards = [];
   window.app.userTargets = [];
   window.app.attempts = 0;
@@ -86,12 +86,19 @@ function generateGameScreen(container) {
  */
 
 function generateCards(container) {
-  container.style.width = 6 * 95 + 5 * 15 + 'px';
-  container.style.height =
-    window.app.level * 133 + (window.app.level - 1) * 15 + 'px';
+  const cardWidth = 95;
+  const cardHeight = 133;
+  const gap = 15;
+  const numberOfCardsInRow = 6;
 
-  for (let i = 0; i < 6 * window.app.level; i++) {
+  container.style.width =
+    numberOfCardsInRow * cardWidth + (numberOfCardsInRow - 1) * gap + 'px';
+  container.style.height =
+    window.app.level * cardHeight + (window.app.level - 1) * gap + 'px';
+
+  for (let i = 0; i < numberOfCardsInRow * window.app.level; i++) {
     const card = document.createElement('div');
+
     card.classList.add('card');
     card.style.background = '#dddddd';
     container.appendChild(card);

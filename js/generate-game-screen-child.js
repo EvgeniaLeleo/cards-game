@@ -3,8 +3,8 @@
  */
 
 function generateGameScreenChild(container) {
-  window.app.time = [0, 0];
-  window.app.pairs = [];
+  window.app.userTimeSekMin = [0, 0];
+  window.app.guessedPairs = [];
   window.app.userCards = [];
   window.app.userTargets = [];
   window.app.attempts = 0;
@@ -91,18 +91,31 @@ function generateCardsChild(container) {
     container.appendChild(card);
   }
 
+  let cardWidth = 120;
+  let numberOfCardsInRow;
+  let numberOfCardsInColumn;
+  const gap = 15;
+
   if (window.app.level === '1') {
-    container.style.width = 3 * 150 + 2 * 15 + 'px';
-    container.style.height = 2 * 150 + 15 + 'px';
+    cardWidth = 150;
+    numberOfCardsInRow = 3;
+    numberOfCardsInColumn = 2;
   }
 
   if (window.app.level === '2') {
-    container.style.width = 4 * 120 + 3 * 15 + 'px';
-    container.style.height = 3 * 120 + 2 * 15 + 'px';
+    numberOfCardsInRow = 4;
+    numberOfCardsInColumn = 3;
   }
 
   if (window.app.level === '3') {
-    container.style.width = 6 * 120 + 5 * 15 + 'px';
-    container.style.height = 3 * 120 + 2 * 15 + 'px';
+    numberOfCardsInRow = 6;
+    numberOfCardsInColumn = 3;
   }
+
+  container.style.width =
+    numberOfCardsInRow * cardWidth + (numberOfCardsInRow - 1) * gap + 'px';
+  container.style.height =
+    numberOfCardsInColumn * cardWidth +
+    (numberOfCardsInColumn - 1) * gap +
+    'px';
 }

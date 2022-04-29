@@ -3,14 +3,16 @@
  */
 
 function generateHelloScreen(container) {
-  window.app.time = [0, 0];
-  window.app.pairs = [];
+  window.app.userTimeSekMin = [0, 0];
+  window.app.guessedPairs = [];
   window.app.userCards = [];
   window.app.userTargets = [];
   window.app.attempts = 0;
 
   clearTimeout(window.app.delay);
   clearInterval(window.app.stopwatch);
+
+  container.innerHTML = '';
 
   const formHello = document.createElement('form');
   formHello.classList.add('form', 'form__hello');
