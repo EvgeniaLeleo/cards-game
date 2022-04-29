@@ -110,7 +110,7 @@ function generateStartScreen(container) {
 
         break;
       } else {
-        buttonStart.textContent = 'Вы не выбрали уровень!';
+        buttonStart.textContent = 'Выберите уровень!';
         buttonStart.style.background = '#c14a00';
       }
     }
