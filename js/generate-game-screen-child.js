@@ -87,7 +87,7 @@ function generateCardsChild(container) {
   for (let i = 0; i < 6 * window.app.level; i++) {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.style.background = '#dddddd';
+    card.style.background = '#c2f5ff';
     container.appendChild(card);
   }
 

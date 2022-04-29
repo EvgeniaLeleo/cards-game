@@ -100,7 +100,7 @@ function generateCards(container) {
     const card = document.createElement('div');
 
     card.classList.add('card');
-    card.style.background = '#dddddd';
+    card.style.background = '#c2f5ff';
     container.appendChild(card);
   }
 }
