@@ -277,6 +277,15 @@ body {
       grid-template-columns: repeat(6, 1fr);
 }
 
+.cards-container-baby {
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
+  width: 100%;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
 .card {
   width: 100%;
   border-radius: 4px;
@@ -348,6 +357,11 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.card_baby {
+  width: 150px;
+  height: 150px;
 }
 
 .img-child {

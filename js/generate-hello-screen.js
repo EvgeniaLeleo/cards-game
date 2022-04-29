@@ -28,25 +28,26 @@ function generateHelloScreen(container) {
   formHello.appendChild(h2Title);
   formHello.appendChild(age);
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     const userAge = document.createElement('input');
     userAge.classList.add('user__age', 'radio');
     userAge.type = 'radio';
-    userAge.id = `userAge${i + 1}`;
+    userAge.id = `userAge${i}`;
     userAge.name = 'userAge';
-    userAge.value = `${i + 1}`;
+    userAge.value = `${i}`;
 
     const label = document.createElement('label');
     label.classList.add('user__age_label', 'label');
-    label.setAttribute('for', `userAge${i + 1}`);
+    label.setAttribute('for', `userAge${i}`);
 
     age.appendChild(userAge);
     age.appendChild(label);
   }
 
   const labels = document.querySelectorAll('.user__age_label');
-  labels[0].innerHTML = '&le; 7';
-  labels[1].textContent = '> 7';
+  labels[0].innerHTML = '0+';
+  labels[1].textContent = '3+';
+  labels[2].textContent = '7+';
 
   const buttonStart = document.createElement('button');
   buttonStart.classList.add('age__button', 'button');
@@ -71,16 +72,21 @@ function generateHelloScreen(container) {
         label.style.color = '#0080c1';
       });
 
-      difficultyLevelLabels[Number(userAge.value) - 1].style.background =
-        '#0080c1';
-      difficultyLevelLabels[Number(userAge.value) - 1].style.color = '#ffffff';
+      difficultyLevelLabels[Number(userAge.value)].style.background = '#0080c1';
+      difficultyLevelLabels[Number(userAge.value)].style.color = '#ffffff';
     });
   });
 
   formHello.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    for (let i = 0; i < userAges.length; i++) {
+    if (userAges[0].checked) {
+      window.app.age = userAges[0].value;
+
+      generateGameScreenBaby(container);
+    }
+
+    for (let i = 1; i < userAges.length; i++) {
       if (userAges[i].checked) {
         window.app.age = userAges[i].value;
 

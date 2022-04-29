@@ -101,9 +101,14 @@ function generateStartScreen(container) {
       if (difficultyLevels[i].checked) {
         window.app.level = difficultyLevels[i].value;
 
+        if (Number(window.app.age) === 0) {
+          generateGameScreenBaby(container);
+        }
+
         if (Number(window.app.age) === 1) {
           generateGameScreenChild(container);
         }
+
         if (Number(window.app.age) === 2) {
           generateGameScreen(container);
         }

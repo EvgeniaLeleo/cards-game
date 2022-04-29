@@ -24,3 +24,14 @@ function hideCardsChild() {
     imgs[i].style.cursor = 'pointer';
   }
 }
+
+function hideCardsBaby() {
+  let imgs = document.querySelectorAll('.card');
+
+  for (let i = 0; i < imgs.length; i++) {
+    imgs[i].style.transform = 'rotateY(-180deg) scale(-1, 1)';
+    imgs[i].setAttribute('style', 'pointer-events: auto;');
+    imgs[i].style.cursor = 'pointer';
+    imgs[i].style.background = '#c8e7ff';
+  }
+}
