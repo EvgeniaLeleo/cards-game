@@ -5,7 +5,7 @@
 function requestFunction() {
   const request = new XMLHttpRequest();
 
-  request.open('GET', '../data/cards.json');
+  request.open('GET', 'data/cards.json');
 
   request.send();
 
@@ -23,7 +23,7 @@ function requestFunction() {
 function requestFunctionChild() {
   const request = new XMLHttpRequest();
 
-  request.open('GET', '../data/cards-child.json');
+  request.open('GET', 'data/cards-child.json');
 
   request.send();
 
