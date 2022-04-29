@@ -14,7 +14,8 @@ function showData(data) {
 
   window.app.delay = setTimeout(
     hideCards,
-    5000 + 1000 * (window.app.level - 1)
+    window.app.cardDisplayTime +
+      window.app.cardDisplayTimeDelay * (window.app.level - 1)
   ); // время показа карт 5s, 6s, 7s
 
   showCard();

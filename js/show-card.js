@@ -32,10 +32,10 @@ function showCard() {
           window.app.attempts++;
 
           if (window.app.attempts === 3) {
-            setTimeout(generateLoseScreen, 400);
+            setTimeout(generateLoseScreen, window.app.commonDelay);
           }
 
-          setTimeout(hideCards, 400);
+          setTimeout(hideCards, window.app.commonDelay);
         }
 
         //если карты совпадают, добавляем в список угаданных пар
@@ -52,7 +52,7 @@ function showCard() {
           if (window.app.guessedPairs.length === window.app.level * 3) {
             clearInterval(window.app.stopwatch);
 
-            setTimeout(generateWinScreen, 400);
+            setTimeout(generateWinScreen, window.app.commonDelay);
           }
         }
       }

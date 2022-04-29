@@ -28,7 +28,7 @@ function showCardChild() {
           window.app.userTargets = [];
           window.app.guessedPairs = [];
 
-          setTimeout(hideCardsChild, 400);
+          setTimeout(hideCardsChild, window.app.commonDelay);
         }
 
         //если карты совпадают, добавляем в список угаданных пар
@@ -45,7 +45,7 @@ function showCardChild() {
           if (window.app.guessedPairs.length === window.app.level * 3) {
             clearInterval(window.app.stopwatch);
 
-            setTimeout(generateWinScreen, 400);
+            setTimeout(generateWinScreen, window.app.commonDelay);
           }
         }
       }
