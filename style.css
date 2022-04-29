@@ -149,6 +149,13 @@ body {
   position: absolute;
 }
 
+.buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
 .difficulty,
 .age {
   display: -webkit-box;
@@ -159,6 +166,14 @@ body {
           justify-content: space-between;
   width: 100%;
   margin-bottom: 67px;
+}
+
+.difficulty__button {
+  min-width: 190px;
+}
+
+.difficulty__button_change-age {
+  background-color: rgba(110, 174, 0, 0.5);
 }
 
 .age {

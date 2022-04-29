@@ -45,11 +45,27 @@ function generateStartScreen(container) {
     difficulty.appendChild(label);
   }
 
+  const buttonsContainer = document.createElement('div');
+  buttonsContainer.classList.add('buttons-container');
+  formStart.appendChild(buttonsContainer);
+
   const buttonStart = document.createElement('button');
   buttonStart.classList.add('difficulty__button', 'button');
+  buttonStart.type = 'submit';
   buttonStart.textContent = 'Старт';
 
-  formStart.appendChild(buttonStart);
+  buttonsContainer.appendChild(buttonStart);
+
+  const buttonChangeAge = document.createElement('button');
+  buttonChangeAge.classList.add(
+    'difficulty__button',
+    'difficulty__button_change-age',
+    'button'
+  );
+  buttonChangeAge.type = 'button';
+  buttonChangeAge.textContent = 'На главную';
+
+  buttonsContainer.appendChild(buttonChangeAge);
 
   const difficultyLevels = document.querySelectorAll('.difficulty__level');
   const difficultyLevelLabels = document.querySelectorAll(
@@ -98,5 +114,10 @@ function generateStartScreen(container) {
         buttonStart.style.background = '#c14a00';
       }
     }
+  });
+
+  buttonChangeAge.addEventListener('click', () => {
+    // const screenContainer = document.querySelector('.screen-container');
+    generateHelloScreen(container);
   });
 }

@@ -12,6 +12,8 @@ function generateHelloScreen(container) {
   clearTimeout(window.app.delay);
   clearInterval(window.app.stopwatch);
 
+  container.innerHTML = '';
+
   const formHello = document.createElement('form');
   formHello.classList.add('form', 'form__hello');
 
