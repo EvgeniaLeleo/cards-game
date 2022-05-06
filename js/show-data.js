@@ -1,8 +1,14 @@
+import { doubleArr, shuffle } from './utils/arr-utils.js';
+import { increaseTime } from './stopwatch.js';
+import { hideCards } from './hide-card.js';
+import { showCard } from './show-card.js';
+import { cardTemplate } from './card-template.js';
+
 /***
  * Вывод данных data из файла *.json в карточки
  */
 
-function showData(data) {
+export function showData(data) {
   const shuffledData = shuffle(data);
   const randomCards = shuffledData.splice(0, window.app.level * 3);
 

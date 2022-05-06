@@ -1,8 +1,10 @@
+import { generateStartScreen } from './generate-start-screen.js';
+
 /**
  * Генерация приветственного экрана
  */
 
-function generateHelloScreen(container) {
+export function generateHelloScreen(container) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -79,12 +81,6 @@ function generateHelloScreen(container) {
 
   formHello.addEventListener('submit', (event) => {
     event.preventDefault();
-
-    // if (userAges[0].checked) {
-    //   window.app.age = userAges[0].value;
-
-    //   generateGameScreenBaby(container);
-    // }
 
     for (let i = 0; i < userAges.length; i++) {
       if (userAges[i].checked) {

@@ -1,3 +1,5 @@
+import { generateHelloScreen } from './generate-hello-screen.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   window.app = {
     userTimeSekMin: [0, 0],

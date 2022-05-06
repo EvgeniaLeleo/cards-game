@@ -2,7 +2,7 @@
  * Переворачиваем карты рубашкой вверх
  */
 
-function hideCards() {
+export function hideCards() {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
@@ -13,7 +13,7 @@ function hideCards() {
   }
 }
 
-function hideCardsChild() {
+export function hideCardsChild() {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
@@ -25,7 +25,7 @@ function hideCardsChild() {
   }
 }
 
-function hideCardsBaby() {
+export function hideCardsBaby() {
   let imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {

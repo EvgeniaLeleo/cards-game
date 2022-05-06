@@ -2,7 +2,7 @@
  * Секундомер
  */
 
-function increaseTime(app) {
+export function increaseTime(app) {
   app.userTimeSekMin[0]++;
 
   const countSek = document.querySelector('.timer__count_sek');

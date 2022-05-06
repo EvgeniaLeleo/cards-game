@@ -1,8 +1,11 @@
+import { showData } from './show-data.js';
+import { showDataChild } from './show-data-child.js';
+
 /***
  * Запрос данных из файла *.json и вывод их на текущую страницу в карты
  */
 
-function requestFunction() {
+export function requestFunction() {
   const request = new XMLHttpRequest();
 
   request.open('GET', 'data/cards.json');
@@ -20,7 +23,7 @@ function requestFunction() {
   };
 }
 
-function requestFunctionChild() {
+export function requestFunctionChild() {
   const request = new XMLHttpRequest();
 
   request.open('GET', 'data/cards-child.json');

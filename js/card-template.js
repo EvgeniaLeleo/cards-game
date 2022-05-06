@@ -1,4 +1,4 @@
-function cardTemplate(data) {
+export function cardTemplate(data) {
   return `<div class="card__content">
   <div class="card__info card__info_top">
     <div class="card__text">${data.text}</div>

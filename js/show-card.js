@@ -1,8 +1,13 @@
+import { cardTemplate } from './card-template.js';
+import { hideCards } from './hide-card.js';
+import { generateWinScreen } from './generate-win-screen.js';
+import { generateLoseScreen } from './generate-lose-screen.js';
+
 /**
  * Открываем карту по клику
  */
 
-function showCard() {
+export function showCard() {
   const imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {

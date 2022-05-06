@@ -1,4 +1,6 @@
-function generateLoseScreen() {
+import { generateStartScreen } from './generate-start-screen.js';
+
+export function generateLoseScreen() {
   const shadow = document.createElement('div');
   shadow.classList.add('shadow');
 
