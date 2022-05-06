@@ -88,29 +88,16 @@ function generateCardsBaby(container) {
   const cardsContainer = document.querySelector('.cards-container-baby');
   cardsContainer.classList.add(`cards-container-baby_${window.app.level}`);
 
-  const cardWidth = 150;
-
+  const numberOfCardsInRow = Number(window.app.level) + 1;
   const numberOfCardsInColumn = 2;
+  const numberOfCards = numberOfCardsInRow * numberOfCardsInColumn;
+
+  const cardWidth = 150;
   const gap = 15;
-  let numberOfCardsInRow;
-  let numberOfCards;
 
   if (window.app.level === '1') {
-    numberOfCards = 4;
-    numberOfCardsInRow = 2;
-
     const timer = document.querySelector('.timer');
     timer.style.marginRight = '70px';
-  }
-
-  if (window.app.level === '2') {
-    numberOfCards = 6;
-    numberOfCardsInRow = 3;
-  }
-
-  if (window.app.level === '3') {
-    numberOfCards = 8;
-    numberOfCardsInRow = 4;
   }
 
   for (let i = 0; i < numberOfCards; i++) {
