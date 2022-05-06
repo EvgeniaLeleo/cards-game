@@ -19,7 +19,7 @@ function generateStartScreen(container) {
 
   const h2Title = document.createElement('h2');
   h2Title.classList.add('h2-title');
-  h2Title.textContent = 'Выбери сложность';
+  h2Title.textContent = 'Выберите сложность';
 
   const difficulty = document.createElement('div');
   difficulty.classList.add('difficulty');
@@ -101,9 +101,14 @@ function generateStartScreen(container) {
       if (difficultyLevels[i].checked) {
         window.app.level = difficultyLevels[i].value;
 
+        if (Number(window.app.age) === 0) {
+          generateGameScreenBaby(container);
+        }
+
         if (Number(window.app.age) === 1) {
           generateGameScreenChild(container);
         }
+
         if (Number(window.app.age) === 2) {
           generateGameScreen(container);
         }
