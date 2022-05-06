@@ -82,12 +82,35 @@ function generateGameScreenBaby(container) {
  */
 
 function generateCardsBaby(container) {
-  let cardWidth = 150;
-  let numberOfCardsInRow = 4;
-  let numberOfCardsInColumn = 2;
-  const gap = 15;
+  const cardsContainer = document.querySelector('.cards-container-baby');
+  cardsContainer.classList.add(`cards-container-baby_${window.app.level}`);
 
-  for (let i = 0; i < 8; i++) {
+  const cardWidth = 150;
+
+  const numberOfCardsInColumn = 2;
+  const gap = 15;
+  let numberOfCardsInRow;
+  let numberOfCards;
+
+  if (window.app.level === '1') {
+    numberOfCards = 4;
+    numberOfCardsInRow = 2;
+
+    const timer = document.querySelector('.timer');
+    timer.style.marginRight = '70px';
+  }
+
+  if (window.app.level === '2') {
+    numberOfCards = 6;
+    numberOfCardsInRow = 3;
+  }
+
+  if (window.app.level === '3') {
+    numberOfCards = 8;
+    numberOfCardsInRow = 4;
+  }
+
+  for (let i = 0; i < numberOfCards; i++) {
     const card = document.createElement('div');
     card.classList.add('card', 'card_baby');
     card.style.background = '#dddddd';

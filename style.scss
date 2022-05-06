@@ -250,7 +250,16 @@ body {
   gap: 15px;
 
   width: 100%;
-  grid-template-columns: repeat(4, 1fr);
+
+  &_1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &_2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &_3 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card {

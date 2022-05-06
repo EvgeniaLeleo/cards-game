@@ -80,13 +80,13 @@ function generateHelloScreen(container) {
   formHello.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (userAges[0].checked) {
-      window.app.age = userAges[0].value;
+    // if (userAges[0].checked) {
+    //   window.app.age = userAges[0].value;
 
-      generateGameScreenBaby(container);
-    }
+    //   generateGameScreenBaby(container);
+    // }
 
-    for (let i = 1; i < userAges.length; i++) {
+    for (let i = 0; i < userAges.length; i++) {
       if (userAges[i].checked) {
         window.app.age = userAges[i].value;
 

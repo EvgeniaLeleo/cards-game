@@ -41,7 +41,7 @@ function showCardBaby() {
 
           window.app.userCards = [];
 
-          if (window.app.guessedPairs.length === 4) {
+          if (window.app.guessedPairs.length === Number(window.app.level) + 1) {
             clearInterval(window.app.stopwatch);
 
             setTimeout(generateWinScreen, window.app.commonDelay);

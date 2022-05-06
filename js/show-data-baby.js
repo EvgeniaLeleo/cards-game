@@ -7,7 +7,9 @@ function showDataBaby() {
 
   const shuffledData = shuffle(data);
 
-  window.app.cardsForCurrentGame = shuffle(doubleArr(shuffledData));
+  const randomCards = shuffledData.splice(0, Number(window.app.level) + 1);
+
+  window.app.cardsForCurrentGame = shuffle(doubleArr(randomCards));
 
   generateCardsContentBaby();
 
