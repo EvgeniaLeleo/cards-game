@@ -1,12 +1,15 @@
+import { doubleArr, shuffle } from './utils/arr-utils.js';
+import { increaseTime } from './stopwatch.js';
+import { hideCardsBaby } from './hide-card.js';
+import { showCardBaby } from './show-card-baby.js';
+
 /***
  *
  */
 
-function showDataBaby() {
-  data = ['#d92519', '#fff500', '#194888', '#02913f'];
-
+export function showDataBaby() {
+  const data = ['#d92519', '#fff500', '#194888', '#02913f'];
   const shuffledData = shuffle(data);
-
   const randomCards = shuffledData.splice(0, Number(window.app.level) + 1);
 
   window.app.cardsForCurrentGame = shuffle(doubleArr(randomCards));

@@ -1,8 +1,11 @@
+import { showDataBaby } from './show-data-baby.js';
+import { generateStartScreen } from './generate-start-screen.js';
+
 /**
  * Генерация экрана игры для малышей
  */
 
-function generateGameScreenBaby(container) {
+export function generateGameScreenBaby(container) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];

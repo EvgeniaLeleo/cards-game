@@ -1,8 +1,11 @@
+import { requestFunctionChild } from './request.js';
+import { generateStartScreen } from './generate-start-screen.js';
+
 /**
  * Генерация экрана детской игры
  */
 
-function generateGameScreenChild(container) {
+export function generateGameScreenChild(container) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];

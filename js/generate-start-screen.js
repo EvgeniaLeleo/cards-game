@@ -1,8 +1,13 @@
+import { generateGameScreen } from './generate-game-screen.js';
+import { generateGameScreenChild } from './generate-game-screen-child.js';
+import { generateGameScreenBaby } from './generate-game-screen-baby.js';
+import { generateHelloScreen } from './generate-hello-screen.js';
+
 /**
  * Генерация начального экрана
  */
 
-function generateStartScreen(container) {
+export function generateStartScreen(container) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -122,7 +127,6 @@ function generateStartScreen(container) {
   });
 
   buttonChangeAge.addEventListener('click', () => {
-    // const screenContainer = document.querySelector('.screen-container');
     generateHelloScreen(container);
   });
 }

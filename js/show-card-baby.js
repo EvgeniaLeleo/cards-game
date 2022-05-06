@@ -1,8 +1,11 @@
+import { hideCardsBaby } from './hide-card.js';
+import { generateWinScreen } from './generate-win-screen.js';
+
 /**
  * Открываем карту по клику
  */
 
-function showCardBaby() {
+export function showCardBaby() {
   const imgs = document.querySelectorAll('.card');
 
   for (let i = 0; i < imgs.length; i++) {
