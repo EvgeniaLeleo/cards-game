@@ -56,7 +56,7 @@ function addGuessedPairs() {
     window.app.userCards.length > 0 &&
     window.app.userCards[0] === window.app.userCards[1]
   ) {
-    if (!app.guessedPairs.includes(window.app.userCards[0])) {
+    if (!window.app.guessedPairs.includes(window.app.userCards[0])) {
       window.app.guessedPairs.push(window.app.userCards[0]);
     }
 
