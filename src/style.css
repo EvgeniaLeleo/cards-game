@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Scada', sans-serif;
+  font-family: Scada, sans-serif;
   background-color: #004980;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,7 +32,7 @@ body {
   font-size: 40px;
   font-weight: 400;
   line-height: 48px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
   color: #004980;
   width: 210px;
@@ -99,9 +99,9 @@ body {
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   background-color: #7ac100;
   border: #7ac100;
   border-radius: 12px;
@@ -118,7 +118,7 @@ body {
   font-size: 64px;
   font-weight: 400;
   line-height: 72px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   text-align: center;
   color: #0080c1;
   display: -webkit-box;
@@ -132,7 +132,7 @@ body {
           align-items: center;
   width: 98px;
   height: 98px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 12px;
   cursor: pointer;
   -webkit-transition: all 0.2s;
@@ -140,7 +140,7 @@ body {
 }
 
 .label:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #0080c1;
 }
 
@@ -205,8 +205,8 @@ body {
   font-size: 64px;
   font-weight: 400;
   line-height: 72px;
-  letter-spacing: 0px;
-  color: #ffffff;
+  letter-spacing: 0;
+  color: #fff;
 }
 
 .timer__text {
@@ -248,6 +248,11 @@ body {
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
   gap: 15px;
+}
+
+.img-child {
+  width: 120px;
+  height: 120px;
 }
 
 .cards-container-child {
@@ -306,7 +311,6 @@ body {
   pointer-events: none;
   -webkit-perspective: 1500rem;
           perspective: 1500rem;
-  -moz-perspective: 1500rem;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
@@ -358,7 +362,7 @@ body {
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
 }
 
@@ -375,11 +379,6 @@ body {
 .card_baby {
   width: 150px;
   height: 150px;
-}
-
-.img-child {
-  width: 120px;
-  height: 120px;
 }
 
 .shadow {
@@ -405,9 +404,9 @@ body {
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  color: #000000;
+  color: #000;
   margin-bottom: 10px;
 }
 
@@ -415,9 +414,9 @@ body {
   font-size: 64px;
   font-weight: 400;
   line-height: 72px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   text-align: center;
-  color: #000000;
+  color: #000;
   margin-bottom: 40px;
 }
 

@@ -5,7 +5,7 @@ export function cardTemplate(data) {
     <img
       class="card__suit"
       src="${data.suit}"
-      alt="${data.name} "
+      alt="${data.name}"
     />
   </div>
   <div class="card__center">
