@@ -1,0 +1,218 @@
+[
+  {
+    "name": "diamonds6",
+    "text": "6",
+    "img": "img/diamonds6.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamonds7",
+    "text": "7",
+    "img": "img/diamonds7.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamonds8",
+    "text": "8",
+    "img": "img/diamonds8.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamonds9",
+    "text": "9",
+    "img": "img/diamonds9.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamonds10",
+    "text": "10",
+    "img": "img/diamonds10.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamondsJ",
+    "text": "J",
+    "img": "img/diamonds-j.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamonds-Q",
+    "text": "Q",
+    "img": "img/diamonds-q.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamondsK",
+    "text": "K",
+    "img": "img/diamonds-k.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "diamondsA",
+    "text": "A",
+    "img": "img/diamonds-a.png",
+    "suit": "img/diamonds.png"
+  },
+  {
+    "name": "spades6",
+    "text": "6",
+    "img": "img/spades6.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spades7",
+    "text": "7",
+    "img": "img/spades7.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spades8",
+    "text": "8",
+    "img": "img/spades8.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spades9",
+    "text": "9",
+    "img": "img/spades9.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spades10",
+    "text": "10",
+    "img": "img/spades10.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spadesJ",
+    "text": "J",
+    "img": "img/spades-j.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spades-Q",
+    "text": "Q",
+    "img": "img/spades-q.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spadesK",
+    "text": "K",
+    "img": "img/spades-k.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "spadesA",
+    "text": "A",
+    "img": "img/spades-a.png",
+    "suit": "img/spades.png"
+  },
+  {
+    "name": "hearts6",
+    "text": "6",
+    "img": "img/hearts6.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "hearts7",
+    "text": "7",
+    "img": "img/hearts7.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "hearts8",
+    "text": "8",
+    "img": "img/hearts8.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "hearts9",
+    "text": "9",
+    "img": "img/hearts9.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "hearts10",
+    "text": "10",
+    "img": "img/hearts10.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "heartsJ",
+    "text": "J",
+    "img": "img/hearts-j.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "hearts-Q",
+    "text": "Q",
+    "img": "img/hearts-q.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "heartsK",
+    "text": "K",
+    "img": "img/hearts-k.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "heartsA",
+    "text": "A",
+    "img": "img/hearts-a.png",
+    "suit": "img/hearts.png"
+  },
+  {
+    "name": "clubs6",
+    "text": "6",
+    "img": "img/clubs6.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubs7",
+    "text": "7",
+    "img": "img/clubs7.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubs8",
+    "text": "8",
+    "img": "img/clubs8.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubs9",
+    "text": "9",
+    "img": "img/clubs9.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubs10",
+    "text": "10",
+    "img": "img/clubs10.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubsJ",
+    "text": "J",
+    "img": "img/clubs-j.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubs-Q",
+    "text": "Q",
+    "img": "img/clubs-q.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubsK",
+    "text": "K",
+    "img": "img/clubs-k.png",
+    "suit": "img/clubs.png"
+  },
+  {
+    "name": "clubsA",
+    "text": "A",
+    "img": "img/clubs-a.png",
+    "suit": "img/clubs.png"
+  }
+]

@@ -1,4 +1,7 @@
-import { requestFunction } from './request.js';
+// import { requestFunction } from './request.js';
+import { showData } from './show-data.js';
+import cardsData from './../data/cards.json';
+
 import { generateStartScreen } from './generate-start-screen.js';
 
 /**
@@ -76,7 +79,8 @@ export function generateGameScreen(container) {
   container.appendChild(cardsContainer);
 
   generateCards(cardsContainer); // Вывод карт на экран
-  requestFunction();
+  // requestFunction();
+  showData(cardsData);
 
   buttonRepeat.addEventListener('click', () => {
     container.innerHTML = '';

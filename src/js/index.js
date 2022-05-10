@@ -1,3 +1,5 @@
+import '../style.css';
+
 import { generateHelloScreen } from './generate-hello-screen.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,6 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const screenContainer = document.querySelector('.screen-container');
-
   generateHelloScreen(screenContainer);
 });

@@ -13,7 +13,7 @@
   },
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "camelcase": ["error"],
+    // "camelcase": ["error"],
     "eqeqeq": ["error"]
   }
 }

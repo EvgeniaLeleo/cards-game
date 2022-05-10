@@ -1,10 +1,6 @@
 import { showData } from './show-data.js';
 import { showDataChild } from './show-data-child.js';
 
-/***
- * Запрос данных из файла *.json и вывод их на текущую страницу в карты
- */
-
 export function requestFunction() {
   const request = new XMLHttpRequest();
 
@@ -40,3 +36,18 @@ export function requestFunctionChild() {
     }
   };
 }
+
+/***
+ * Запрос данных из файла *.json и вывод их на текущую страницу в карты
+ */
+
+// import cardsData from './../data/cards.json';
+// import cardsDataChild from './../data/cards-child.json';
+
+// export function requestFunction() {
+//   showData(cardsData);
+// }
+
+// export function requestFunctionChild() {
+//   showDataChild(cardsDataChild);
+// }
