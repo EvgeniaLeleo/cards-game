@@ -1,4 +1,3 @@
-// import { requestFunction } from './request.js';
 import { showData } from './show-data.js';
 import cardsData from './../data/cards.json';
 
@@ -79,7 +78,6 @@ export function generateGameScreen(container) {
   container.appendChild(cardsContainer);
 
   generateCards(cardsContainer); // Вывод карт на экран
-  // requestFunction();
   showData(cardsData);
 
   buttonRepeat.addEventListener('click', () => {

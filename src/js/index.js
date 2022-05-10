@@ -1,4 +1,4 @@
-import '../style.css';
+import '../style.scss';
 
 import { generateHelloScreen } from './generate-hello-screen.js';
 

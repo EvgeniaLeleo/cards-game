@@ -1,6 +1,5 @@
-import { requestFunctionChild } from './request.js';
-// import { showDataChild } from './show-data-child.js';
-// import cardsDataChild from './../data/cards-child.json';
+import { showDataChild } from './show-data-child.js';
+import cardsDataChild from './../data/cards-child.json';
 
 import { generateStartScreen } from './generate-start-screen.js';
 
@@ -74,8 +73,7 @@ export function generateGameScreenChild(container) {
   container.appendChild(cardsContainer);
 
   generateCardsChild(cardsContainer); // Вывод картинок на экран
-  requestFunctionChild();
-  // showDataChild(cardsDataChild);
+  showDataChild(cardsDataChild);
 
   buttonRepeat.addEventListener('click', () => {
     container.innerHTML = '';

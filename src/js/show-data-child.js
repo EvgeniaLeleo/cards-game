@@ -8,7 +8,9 @@ import { showCardChild } from './show-card-child.js';
  */
 
 export function showDataChild(data) {
-  const shuffledData = shuffle(data);
+  const dataClone = data.slice();
+  const shuffledData = shuffle(dataClone);
+
   const randomCards = shuffledData.splice(0, window.app.level * 3);
 
   window.app.cardsForCurrentGame = shuffle(doubleArr(randomCards));
