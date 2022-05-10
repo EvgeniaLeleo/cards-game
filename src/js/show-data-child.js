@@ -38,7 +38,7 @@ function generateCardsContentChild(data) {
   for (let i = 0; i < imgs.length; i++) {
     imgs[
       i
-    ].innerHTML = `<img class="img-child" src="./../${data[i].img}" alt="${data[i].name}" />`;
+    ].innerHTML = `<img class="img-child" src="${data[i].img}" alt="${data[i].name}" />`;
     imgs[i].style.transform = 'rotateY(-180deg) scale(-1, 1)';
   }
 }
