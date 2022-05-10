@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-// const { isDataView } = require('util/types');
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
@@ -13,16 +12,11 @@ module.exports = {
   entry: './src/js/index.js',
   devtool:
     process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'source-map',
-  // devServer: {
-  //   static: './dist',
-  // },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     clean: true,
   },
-
-  // resolve: { extensions: ['.js'] },
 
   module: {
     rules: [
@@ -35,7 +29,6 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            // options: { hmr: isDev, reloadAll: true },
           },
           'css-loader',
           'sass-loader',
@@ -58,17 +51,11 @@ module.exports = {
 
   plugins: [
     new CopyPlugin({
-      patterns: [
-        { from: './src/img', to: './img' },
-        // { from: './src/data', to: './data' },
-      ],
+      patterns: [{ from: './src/img', to: './img' }],
     }),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './index.html',
-      // files: {
-      //   js: ['./src/js/index.js'],
-      // },
     }),
   ],
 };
