@@ -9,7 +9,7 @@ export function generateLoseScreen() {
 
   const imgLose = document.createElement('img');
   imgLose.classList.add('img-lose');
-  imgLose.src = 'img/lose.png';
+  imgLose.src = './static/img/lose.png';
 
   const h2Title = document.createElement('h2');
   h2Title.classList.add('h2-title');

@@ -9,7 +9,7 @@ export function generateWinScreen() {
 
   const imgWin = document.createElement('img');
   imgWin.classList.add('img-win');
-  imgWin.src = 'img/win.png';
+  imgWin.src = './static/img/win.png';
 
   const h2Title = document.createElement('h2');
   h2Title.classList.add('h2-title');
