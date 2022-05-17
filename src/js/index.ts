@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cardDisplayTimeDelay: 1000,
   };
 
-  const screenContainer = document.querySelector('.screen-container');
+  const screenContainer = document.querySelector(
+    '.screen-container'
+  ) as HTMLDivElement;
   generateHelloScreen(screenContainer);
 });

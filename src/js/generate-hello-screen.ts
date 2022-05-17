@@ -4,7 +4,7 @@ import { generateStartScreen } from './generate-start-screen';
  * Генерация приветственного экрана
  */
 
-export function generateHelloScreen(container) {
+export function generateHelloScreen(container: HTMLDivElement) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];

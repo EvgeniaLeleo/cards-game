@@ -14,7 +14,7 @@ declare global {
  * Вывод данных data из файла *.json в карточки
  */
 
-export function showData(data) {
+export function showData(data: any[]) {
   const dataClone = data.slice();
   const shuffledData = shuffle(dataClone);
   const randomCards = shuffledData.splice(0, window.app.level * 3);
@@ -38,7 +38,7 @@ export function showData(data) {
  * Заполнение n карт данными из массива data = shuffle(doubleCards)
  */
 
-function generateCardsContent(data) {
+function generateCardsContent(data: any[]) {
   let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {

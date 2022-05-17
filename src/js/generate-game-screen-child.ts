@@ -7,7 +7,7 @@ import { generateStartScreen } from './generate-start-screen';
  * Генерация экрана детской игры
  */
 
-export function generateGameScreenChild(container) {
+export function generateGameScreenChild(container: HTMLDivElement) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -85,8 +85,10 @@ export function generateGameScreenChild(container) {
  * Генерация и вывод картинок на экран
  */
 
-function generateCardsChild(container) {
-  const cardsContainer = document.querySelector('.cards-container-child');
+function generateCardsChild(container: HTMLDivElement) {
+  const cardsContainer = document.querySelector(
+    '.cards-container-child'
+  ) as HTMLDivElement;
   cardsContainer.classList.add(`cards-container-child_${window.app.level}`);
 
   for (let i = 0; i < 6 * window.app.level; i++) {
@@ -97,8 +99,8 @@ function generateCardsChild(container) {
   }
 
   let cardWidth = 120;
-  let numberOfCardsInRow;
-  let numberOfCardsInColumn;
+  let numberOfCardsInRow = 3;
+  let numberOfCardsInColumn = 2;
   const gap = 15;
 
   if (window.app.level === '1') {

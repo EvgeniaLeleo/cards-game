@@ -9,7 +9,7 @@ const mode =
 module.exports = {
   mode,
 
-  entry: './src/js/index.js',
+  entry: './src/js/index.ts',
   devtool:
     process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'source-map',
   output: {

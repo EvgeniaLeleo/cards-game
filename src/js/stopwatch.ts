@@ -5,8 +5,12 @@
 export function increaseTime() {
   window.app.userTimeSekMin[0]++;
 
-  const countSek = document.querySelector('.timer__count_sek');
-  const countMin = document.querySelector('.timer__count_min');
+  const countSek = document.querySelector(
+    '.timer__count_sek'
+  ) as HTMLDivElement;
+  const countMin = document.querySelector(
+    '.timer__count_min'
+  ) as HTMLDivElement;
 
   countSek.textContent = '0' + window.app.userTimeSekMin[0];
 

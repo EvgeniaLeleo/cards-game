@@ -1,4 +1,11 @@
-export function cardTemplate(data) {
+type cardObj = {
+  name: string;
+  text: string;
+  img: boolean;
+  suit: string;
+};
+
+export function cardTemplate(data: cardObj) {
   return `<div class="card__content">
   <div class="card__info card__info_top">
     <div class="card__text">${data.text}</div>

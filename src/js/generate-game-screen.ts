@@ -7,7 +7,7 @@ import { generateStartScreen } from './generate-start-screen';
  * Генерация экрана игры
  */
 
-export function generateGameScreen(container) {
+export function generateGameScreen(container: HTMLDivElement) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -90,7 +90,7 @@ export function generateGameScreen(container) {
  * Генерация и вывод карт на экран
  */
 
-function generateCards(container) {
+function generateCards(container: HTMLDivElement) {
   const cardWidth = 95;
   const cardHeight = 133;
   const gap = 15;

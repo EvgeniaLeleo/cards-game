@@ -19,8 +19,8 @@ export function generateLoseScreen() {
   text.classList.add('final-text');
   text.textContent = 'Затраченное время:';
 
-  const min = document.querySelector('.timer__count_min');
-  const sek = document.querySelector('.timer__count_sek');
+  const min = document.querySelector('.timer__count_min') as HTMLDivElement;
+  const sek = document.querySelector('.timer__count_sek') as HTMLDivElement;
 
   const time = document.createElement('p');
   time.classList.add('final-time');
@@ -30,7 +30,9 @@ export function generateLoseScreen() {
   buttonRepeat.classList.add('button');
   buttonRepeat.textContent = 'Играть снова';
 
-  const screenContainer = document.querySelector('.screen-container');
+  const screenContainer = document.querySelector(
+    '.screen-container'
+  ) as HTMLDivElement;
   screenContainer.appendChild(shadow);
   screenContainer.appendChild(formLose);
   formLose.appendChild(imgLose);
