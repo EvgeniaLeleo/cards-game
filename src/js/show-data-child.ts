@@ -1,7 +1,7 @@
-import { doubleArr, shuffle } from './utils/arr-utils.js';
-import { increaseTime } from './stopwatch.js';
-import { hideCardsChild } from './hide-card.js';
-import { showCardChild } from './show-card-child.js';
+import { doubleArr, shuffle } from './utils/arr-utils';
+import { increaseTime } from './stopwatch';
+import { hideCardsChild } from './hide-card';
+import { showCardChild } from './show-card-child';
 
 /***
  * Вывод данных data из файла *.json в карточки
@@ -17,7 +17,7 @@ export function showDataChild(data) {
 
   generateCardsContentChild(window.app.cardsForCurrentGame);
 
-  window.app.stopwatch = setInterval(increaseTime, 1000, window.app); // запуск секундомера
+  window.app.stopwatch = setInterval(increaseTime, 1000); // запуск секундомера
 
   window.app.delay = setTimeout(
     hideCardsChild,
@@ -33,7 +33,7 @@ export function showDataChild(data) {
  */
 
 function generateCardsContentChild(data) {
-  let imgs = document.querySelectorAll('.card');
+  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[

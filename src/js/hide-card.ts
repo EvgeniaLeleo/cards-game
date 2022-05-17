@@ -3,7 +3,7 @@
  */
 
 export function hideCards() {
-  let imgs = document.querySelectorAll('.card');
+  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].innerHTML = '<img src="img/back.png" alt="Card back" />';
@@ -14,7 +14,7 @@ export function hideCards() {
 }
 
 export function hideCardsChild() {
-  let imgs = document.querySelectorAll('.card');
+  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].innerHTML =
@@ -26,7 +26,7 @@ export function hideCardsChild() {
 }
 
 export function hideCardsBaby() {
-  let imgs = document.querySelectorAll('.card');
+  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].style.transform = 'rotateY(-180deg) scale(-1, 1)';

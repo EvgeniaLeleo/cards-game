@@ -1,6 +1,12 @@
 import '../style.scss';
 
-import { generateHelloScreen } from './generate-hello-screen.js';
+import { generateHelloScreen } from './generate-hello-screen';
+
+declare global {
+  interface Window {
+    app?: any;
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   window.app = {

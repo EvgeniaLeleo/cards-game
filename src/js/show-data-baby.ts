@@ -1,7 +1,7 @@
-import { doubleArr, shuffle } from './utils/arr-utils.js';
-import { increaseTime } from './stopwatch.js';
-import { hideCardsBaby } from './hide-card.js';
-import { showCardBaby } from './show-card-baby.js';
+import { doubleArr, shuffle } from './utils/arr-utils';
+import { increaseTime } from './stopwatch';
+import { hideCardsBaby } from './hide-card';
+import { showCardBaby } from './show-card-baby';
 
 /***
  *
@@ -16,7 +16,7 @@ export function showDataBaby() {
 
   generateCardsContentBaby();
 
-  window.app.stopwatch = setInterval(increaseTime, 1000, window.app); // запуск секундомера
+  window.app.stopwatch = setInterval(increaseTime, 1000); // запуск секундомера
 
   window.app.delay = setTimeout(hideCardsBaby, window.app.cardDisplayTime); // время показа карт 5s
 
@@ -28,7 +28,7 @@ export function showDataBaby() {
  */
 
 function generateCardsContentBaby() {
-  let imgs = document.querySelectorAll('.card');
+  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].style.background = `${window.app.cardsForCurrentGame[i]}`;

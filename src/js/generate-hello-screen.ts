@@ -1,4 +1,4 @@
-import { generateStartScreen } from './generate-start-screen.js';
+import { generateStartScreen } from './generate-start-screen';
 
 /**
  * Генерация приветственного экрана
@@ -46,7 +46,9 @@ export function generateHelloScreen(container) {
     age.appendChild(label);
   }
 
-  const labels = document.querySelectorAll('.user__age_label');
+  const labels = document.querySelectorAll(
+    '.user__age_label'
+  ) as NodeListOf<HTMLLabelElement>;
   labels[0].innerHTML = '0+';
   labels[1].textContent = '3+';
   labels[2].textContent = '7+';
@@ -57,8 +59,12 @@ export function generateHelloScreen(container) {
 
   formHello.appendChild(buttonStart);
 
-  const userAges = document.querySelectorAll('.user__age');
-  const difficultyLevelLabels = document.querySelectorAll('.user__age_label');
+  const userAges = document.querySelectorAll(
+    '.user__age'
+  ) as NodeListOf<HTMLInputElement>;
+  const difficultyLevelLabels = document.querySelectorAll(
+    '.user__age_label'
+  ) as NodeListOf<HTMLLabelElement>;
 
   /**
    * Смена цвета выбранного уровня сложности

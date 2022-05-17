@@ -1,8 +1,14 @@
-import { doubleArr, shuffle } from './utils/arr-utils.js';
-import { increaseTime } from './stopwatch.js';
-import { hideCards } from './hide-card.js';
-import { showCard } from './show-card.js';
-import { cardTemplate } from './card-template.js';
+import { doubleArr, shuffle } from './utils/arr-utils';
+import { increaseTime } from './stopwatch';
+import { hideCards } from './hide-card';
+import { showCard } from './show-card';
+import { cardTemplate } from './card-template';
+
+declare global {
+  interface Window {
+    app?: any;
+  }
+}
 
 /***
  * Вывод данных data из файла *.json в карточки
@@ -17,7 +23,7 @@ export function showData(data) {
 
   generateCardsContent(window.app.cardsForCurrentGame);
 
-  window.app.stopwatch = setInterval(increaseTime, 1000, window.app); // запуск секундомера
+  window.app.stopwatch = setInterval(increaseTime, 1000); // запуск секундомера
 
   window.app.delay = setTimeout(
     hideCards,
@@ -33,7 +39,7 @@ export function showData(data) {
  */
 
 function generateCardsContent(data) {
-  let imgs = document.querySelectorAll('.card');
+  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].innerHTML = cardTemplate(data[i]);

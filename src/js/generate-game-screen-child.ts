@@ -1,7 +1,7 @@
-import { showDataChild } from './show-data-child.js';
-import cardsDataChild from './../data/cards-child.json';
+import { showDataChild } from './show-data-child';
+import cardsDataChild from '../data/cards-child.json';
 
-import { generateStartScreen } from './generate-start-screen.js';
+import { generateStartScreen } from './generate-start-screen';
 
 /**
  * Генерация экрана детской игры

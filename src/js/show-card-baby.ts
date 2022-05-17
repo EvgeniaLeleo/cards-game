@@ -1,28 +1,27 @@
-import { hideCardsChild } from './hide-card.js';
-import { generateWinScreen } from './generate-win-screen.js';
+import { hideCardsBaby } from './hide-card';
+import { generateWinScreen } from './generate-win-screen';
 
 /**
  * Открываем карту по клику
  */
 
-export function showCardChild() {
-  const imgs = document.querySelectorAll('.card');
+export function showCardBaby() {
+  const imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].addEventListener('click', () => {
-      imgs[
-        i
-      ].innerHTML = `<img class="img-child" src="${window.app.cardsForCurrentGame[i].img}" alt="${window.app.cardsForCurrentGame[i].name}" />`;
       imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
+      imgs[i].style.background = `${window.app.cardsForCurrentGame[i]}`;
+      imgs[i].style.border = '10px solid #ffffff';
 
       // добавляем пару выбранных карт в window.app.userCards
       if (!window.app.userCards[0] && !window.app.userTargets.includes(i)) {
-        window.app.userCards[0] = window.app.cardsForCurrentGame[i].name;
+        window.app.userCards[0] = window.app.cardsForCurrentGame[i];
         window.app.userTargets.push(i);
       }
 
       if (window.app.userCards[0] && !window.app.userTargets.includes(i)) {
-        window.app.userCards[1] = window.app.cardsForCurrentGame[i].name;
+        window.app.userCards[1] = window.app.cardsForCurrentGame[i];
         window.app.userTargets.push(i);
 
         //если карты не совпадают, обнуляем все результаты
@@ -31,7 +30,7 @@ export function showCardChild() {
           window.app.userTargets = [];
           window.app.guessedPairs = [];
 
-          setTimeout(hideCardsChild, window.app.commonDelay);
+          setTimeout(hideCardsBaby, window.app.commonDelay);
         }
 
         //если карты совпадают, добавляем в список угаданных пар
@@ -45,7 +44,7 @@ export function showCardChild() {
 
           window.app.userCards = [];
 
-          if (window.app.guessedPairs.length === window.app.level * 3) {
+          if (window.app.guessedPairs.length === Number(window.app.level) + 1) {
             clearInterval(window.app.stopwatch);
 
             setTimeout(generateWinScreen, window.app.commonDelay);

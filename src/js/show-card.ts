@@ -1,14 +1,14 @@
-import { cardTemplate } from './card-template.js';
-import { hideCards } from './hide-card.js';
-import { generateWinScreen } from './generate-win-screen.js';
-import { generateLoseScreen } from './generate-lose-screen.js';
+import { cardTemplate } from './card-template';
+import { hideCards } from './hide-card';
+import { generateWinScreen } from './generate-win-screen';
+import { generateLoseScreen } from './generate-lose-screen';
 
 /**
  * Открываем карту по клику
  */
 
 export function showCard() {
-  const imgs = document.querySelectorAll('.card');
+  const imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].addEventListener('click', () => {
@@ -38,7 +38,9 @@ function resetResults() {
     window.app.userTargets = [];
     window.app.guessedPairs = [];
 
-    const attempts = document.querySelectorAll('.attempt');
+    const attempts = document.querySelectorAll(
+      '.attempt'
+    ) as NodeListOf<HTMLDivElement>;
     attempts[window.app.attempts].style.background = '#c14a00';
 
     window.app.attempts++;

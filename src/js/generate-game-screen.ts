@@ -1,11 +1,13 @@
-import { showDataBaby } from './show-data-baby.js';
-import { generateStartScreen } from './generate-start-screen.js';
+import { showData } from './show-data';
+import cardsData from '../data/cards.json';
+
+import { generateStartScreen } from './generate-start-screen';
 
 /**
- * Генерация экрана игры для малышей
+ * Генерация экрана игры
  */
 
-export function generateGameScreenBaby(container) {
+export function generateGameScreen(container) {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -57,7 +59,7 @@ export function generateGameScreenBaby(container) {
   buttonRepeat.textContent = 'Начать заново';
 
   const cardsContainer = document.createElement('div');
-  cardsContainer.classList.add('cards-container-baby');
+  cardsContainer.classList.add('cards-container');
 
   container.appendChild(header);
   header.appendChild(timer);
@@ -67,12 +69,16 @@ export function generateGameScreenBaby(container) {
   timer.appendChild(dot);
   timer.appendChild(sek);
 
+  header.appendChild(attempts);
+  attempts.appendChild(attempt1);
+  attempts.appendChild(attempt2);
+  attempts.appendChild(attempt3);
+
   header.appendChild(buttonRepeat);
   container.appendChild(cardsContainer);
 
-  generateCardsBaby(cardsContainer); // Вывод картинок на экран
-
-  showDataBaby();
+  generateCards(cardsContainer); // Вывод карт на экран
+  showData(cardsData);
 
   buttonRepeat.addEventListener('click', () => {
     container.innerHTML = '';
@@ -81,36 +87,25 @@ export function generateGameScreenBaby(container) {
 }
 
 /**
- * Генерация и вывод картинок на экран
+ * Генерация и вывод карт на экран
  */
 
-function generateCardsBaby(container) {
-  const cardsContainer = document.querySelector('.cards-container-baby');
-  cardsContainer.classList.add(`cards-container-baby_${window.app.level}`);
-
-  const numberOfCardsInRow = Number(window.app.level) + 1;
-  const numberOfCardsInColumn = 2;
-  const numberOfCards = numberOfCardsInRow * numberOfCardsInColumn;
-
-  const cardWidth = 150;
+function generateCards(container) {
+  const cardWidth = 95;
+  const cardHeight = 133;
   const gap = 15;
-
-  if (window.app.level === '1') {
-    const timer = document.querySelector('.timer');
-    timer.style.marginRight = '70px';
-  }
-
-  for (let i = 0; i < numberOfCards; i++) {
-    const card = document.createElement('div');
-    card.classList.add('card', 'card_baby');
-    card.style.background = '#dddddd';
-    container.appendChild(card);
-  }
+  const numberOfCardsInRow = 6;
 
   container.style.width =
     numberOfCardsInRow * cardWidth + (numberOfCardsInRow - 1) * gap + 'px';
   container.style.height =
-    numberOfCardsInColumn * cardWidth +
-    (numberOfCardsInColumn - 1) * gap +
-    'px';
+    window.app.level * cardHeight + (window.app.level - 1) * gap + 'px';
+
+  for (let i = 0; i < numberOfCardsInRow * window.app.level; i++) {
+    const card = document.createElement('div');
+
+    card.classList.add('card');
+    card.style.background = '#c2f5ff';
+    container.appendChild(card);
+  }
 }

@@ -1,7 +1,7 @@
-import { generateGameScreen } from './generate-game-screen.js';
-import { generateGameScreenChild } from './generate-game-screen-child.js';
-import { generateGameScreenBaby } from './generate-game-screen-baby.js';
-import { generateHelloScreen } from './generate-hello-screen.js';
+import { generateGameScreen } from './generate-game-screen';
+import { generateGameScreenChild } from './generate-game-screen-child';
+import { generateGameScreenBaby } from './generate-game-screen-baby';
+import { generateHelloScreen } from './generate-hello-screen';
 
 /**
  * Генерация начального экрана
@@ -72,10 +72,12 @@ export function generateStartScreen(container) {
 
   buttonsContainer.appendChild(buttonChangeAge);
 
-  const difficultyLevels = document.querySelectorAll('.difficulty__level');
+  const difficultyLevels = document.querySelectorAll(
+    '.difficulty__level'
+  ) as NodeListOf<HTMLInputElement>;
   const difficultyLevelLabels = document.querySelectorAll(
     '.difficulty__level_label'
-  );
+  ) as NodeListOf<HTMLLabelElement>;
 
   /**
    * Смена цвета выбранного уровня сложности
