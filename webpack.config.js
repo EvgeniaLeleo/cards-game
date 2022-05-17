@@ -9,7 +9,7 @@ const mode =
 module.exports = {
   mode,
 
-  entry: './src/js/index.ts',
+  entry: './src/ts/index.ts',
   devtool:
     process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'source-map',
   output: {
@@ -20,6 +20,11 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
@@ -45,13 +50,17 @@ module.exports = {
     ],
   },
 
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+
   optimization: {
     minimizer: ['...', new CssMinimizerPlugin()],
   },
 
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: './src/img', to: './img' }],
+      patterns: [{ from: './static', to: './static' }],
     }),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
