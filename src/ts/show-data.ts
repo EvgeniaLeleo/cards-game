@@ -4,17 +4,18 @@ import { hideCards } from './hide-card';
 import { showCard } from './show-card';
 import { cardTemplate } from './card-template';
 
-declare global {
-  interface Window {
-    app?: any;
-  }
-}
-
 /***
  * Вывод данных data из файла *.json в карточки
  */
 
-export function showData(data: any[]) {
+type cardObj = {
+  name: string;
+  text: string;
+  img: boolean;
+  suit: string;
+};
+
+export function showData(data: cardObj[]) {
   const dataClone = data.slice();
   const shuffledData = shuffle(dataClone);
   const randomCards = shuffledData.splice(0, window.app.level * 3);
@@ -38,7 +39,7 @@ export function showData(data: any[]) {
  * Заполнение n карт данными из массива data = shuffle(doubleCards)
  */
 
-function generateCardsContent(data: any[]) {
+function generateCardsContent(data: cardObj[]) {
   let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {

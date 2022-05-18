@@ -1,8 +1,15 @@
+type cardObj = {
+  name: string;
+  text: string;
+  img: boolean;
+  suit: string;
+};
+
 /**
  *Дублирование элементов массива
  */
 
-export function doubleArr(a: any[]) {
+export function doubleArr(a: (cardObj | string)[]) {
   return a.concat(a);
 }
 
@@ -10,7 +17,7 @@ export function doubleArr(a: any[]) {
  * Перемешивание элементов массива
  */
 
-export function shuffle(array: any[]) {
+export function shuffle(array: (cardObj | string)[]) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1)); // случайный индекс от 0 до i
 

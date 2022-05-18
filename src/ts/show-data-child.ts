@@ -7,7 +7,14 @@ import { showCardChild } from './show-card-child';
  * Вывод данных data из файла *.json в карточки
  */
 
-export function showDataChild(data: any[]) {
+type cardObj = {
+  name: string;
+  text: string;
+  img: boolean;
+  suit: string;
+};
+
+export function showDataChild(data: cardObj[]) {
   const dataClone = data.slice();
   const shuffledData = shuffle(dataClone);
 
@@ -32,7 +39,7 @@ export function showDataChild(data: any[]) {
  * Заполнение n карт данными из массива data = shuffle(doubleCards)
  */
 
-function generateCardsContentChild(data: any[]) {
+function generateCardsContentChild(data: cardObj[]) {
   let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
 
   for (let i = 0; i < imgs.length; i++) {
