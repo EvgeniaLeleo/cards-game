@@ -8,6 +8,7 @@
   "plugins": ["stylelint-scss"],
 
   "rules": {
+    "alpha-value-notation": "number",
     "at-rule-no-unknown": null,
     "color-function-notation": "legacy",
     "declaration-empty-line-before": null,

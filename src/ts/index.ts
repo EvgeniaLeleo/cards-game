@@ -4,7 +4,7 @@ import { generateHelloScreen } from './generate-hello-screen';
 
 declare global {
   interface Window {
-    app?: any;
+    app: any;
   }
 }
 
