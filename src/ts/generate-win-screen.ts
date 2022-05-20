@@ -1,6 +1,6 @@
 import { generateStartScreen } from './generate-start-screen';
 
-export function generateWinScreen() {
+export function generateWinScreen(): void {
   const shadow = document.createElement('div');
   shadow.classList.add('shadow');
 

@@ -7,40 +7,52 @@ import { generateLoseScreen } from './generate-lose-screen';
  * Открываем карту по клику
  */
 
-export function showCard() {
-  const imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
+type cardObj = {
+  name: string;
+  text: string;
+  img: string;
+  suit: string;
+};
 
-  for (let i = 0; i < imgs.length; i++) {
-    imgs[i].addEventListener('click', () => {
-      imgs[i].innerHTML = cardTemplate(window.app.cardsForCurrentGame[i]);
-      imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
+function isObjArray(arg: (cardObj | string)[]): arg is cardObj[] {
+  return typeof arg === 'object';
+}
 
-      // добавляем пару выбранных карт в window.app.userCards
-      if (!window.app.userCards[0] && !window.app.userTargets.includes(i)) {
-        window.app.userCards[0] = window.app.cardsForCurrentGame[i].name;
-        window.app.userTargets.push(i);
-      }
+export function showCard(): void {
+  const imgs = document.querySelectorAll<HTMLDivElement>('.card');
+  const cardsForCurrentGame = window.app.cardsForCurrentGame;
 
-      if (window.app.userCards[0] && !window.app.userTargets.includes(i)) {
-        window.app.userCards[1] = window.app.cardsForCurrentGame[i].name;
-        window.app.userTargets.push(i);
+  if (isObjArray(cardsForCurrentGame)) {
+    for (let i = 0; i < imgs.length; i++) {
+      imgs[i].addEventListener('click', () => {
+        imgs[i].innerHTML = cardTemplate(cardsForCurrentGame[i]);
+        imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
 
-        resetResults(); //если карты не совпадают, обнуляем все результаты
-        addGuessedPairs(); //если карты совпадают, добавляем в список угаданных пар
-      }
-    });
+        // добавляем пару выбранных карт в window.app.userCards
+        if (!window.app.userCards[0] && !window.app.userTargets.includes(i)) {
+          window.app.userCards[0] = cardsForCurrentGame[i].name;
+          window.app.userTargets.push(i);
+        }
+
+        if (window.app.userCards[0] && !window.app.userTargets.includes(i)) {
+          window.app.userCards[1] = cardsForCurrentGame[i].name;
+          window.app.userTargets.push(i);
+
+          resetResults(); //если карты не совпадают, обнуляем все результаты
+          addGuessedPairs(); //если карты совпадают, добавляем в список угаданных пар
+        }
+      });
+    }
   }
 }
 
-function resetResults() {
+function resetResults(): void {
   if (window.app.userCards[0] !== window.app.userCards[1]) {
     window.app.userCards = [];
     window.app.userTargets = [];
     window.app.guessedPairs = [];
 
-    const attempts = document.querySelectorAll(
-      '.attempt'
-    ) as NodeListOf<HTMLDivElement>;
+    const attempts = document.querySelectorAll<HTMLDivElement>('.attempt');
     attempts[window.app.attempts].style.background = '#c14a00';
 
     window.app.attempts++;
@@ -53,7 +65,7 @@ function resetResults() {
   }
 }
 
-function addGuessedPairs() {
+function addGuessedPairs(): void {
   if (
     window.app.userCards.length > 0 &&
     window.app.userCards[0] === window.app.userCards[1]
@@ -64,7 +76,7 @@ function addGuessedPairs() {
 
     window.app.userCards = [];
 
-    if (window.app.guessedPairs.length === window.app.level * 3) {
+    if (window.app.guessedPairs.length === Number(window.app.level) * 3) {
       clearInterval(window.app.stopwatch);
 
       setTimeout(generateWinScreen, window.app.commonDelay);

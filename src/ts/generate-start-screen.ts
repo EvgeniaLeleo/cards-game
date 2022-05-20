@@ -7,7 +7,7 @@ import { generateHelloScreen } from './generate-hello-screen';
  * Генерация начального экрана
  */
 
-export function generateStartScreen(container: HTMLDivElement) {
+export function generateStartScreen(container: HTMLDivElement): void {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -72,12 +72,11 @@ export function generateStartScreen(container: HTMLDivElement) {
 
   buttonsContainer.appendChild(buttonChangeAge);
 
-  const difficultyLevels = document.querySelectorAll(
-    '.difficulty__level'
-  ) as NodeListOf<HTMLInputElement>;
-  const difficultyLevelLabels = document.querySelectorAll(
+  const difficultyLevels =
+    document.querySelectorAll<HTMLInputElement>('.difficulty__level');
+  const difficultyLevelLabels = document.querySelectorAll<HTMLLabelElement>(
     '.difficulty__level_label'
-  ) as NodeListOf<HTMLLabelElement>;
+  );
 
   /**
    * Смена цвета выбранного уровня сложности

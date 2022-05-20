@@ -2,7 +2,7 @@
  * Секундомер
  */
 
-export function increaseTime() {
+export function increaseTime(): void {
   window.app.userTimeSekMin[0]++;
 
   const countSek = document.querySelector(
@@ -18,7 +18,7 @@ export function increaseTime() {
     10 <= window.app.userTimeSekMin[0] &&
     window.app.userTimeSekMin[0] <= 59
   ) {
-    countSek.textContent = window.app.userTimeSekMin[0];
+    countSek.textContent = window.app.userTimeSekMin[0].toString();
   }
 
   if (window.app.userTimeSekMin[0] === 60) {
@@ -32,7 +32,7 @@ export function increaseTime() {
       10 <= window.app.userTimeSekMin[1] &&
       window.app.userTimeSekMin[1] <= 59
     ) {
-      countMin.textContent = window.app.userTimeSekMin[1];
+      countMin.textContent = window.app.userTimeSekMin[1].toString();
     }
 
     if (window.app.userTimeSekMin[1] === 60) {

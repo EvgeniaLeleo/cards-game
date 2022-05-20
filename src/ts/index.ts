@@ -1,10 +1,32 @@
 import '../style.scss';
-
 import { generateHelloScreen } from './generate-hello-screen';
+
+type cardObj = {
+  name: string;
+  text: string;
+  img: string;
+  suit: string;
+};
+
+type gameApp = {
+  userTimeSekMin: number[];
+  cardsForCurrentGame: (cardObj | string)[];
+  userCards: string[];
+  userTargets: number[];
+  guessedPairs: string[];
+  attempts: number;
+  commonDelay: number;
+  cardDisplayTime: number;
+  cardDisplayTimeDelay: number;
+  level?: string;
+  delay?: number;
+  stopwatch?: number;
+  age?: string;
+};
 
 declare global {
   interface Window {
-    app: any;
+    app: gameApp;
   }
 }
 

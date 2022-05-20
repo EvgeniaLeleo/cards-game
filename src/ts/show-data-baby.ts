@@ -7,7 +7,7 @@ import { showCardBaby } from './show-card-baby';
  *
  */
 
-export function showDataBaby() {
+export function showDataBaby(): void {
   const data = ['#d92519', '#fff500', '#194888', '#02913f'];
   const shuffledData = shuffle(data);
   const randomCards = shuffledData.splice(0, Number(window.app.level) + 1);
@@ -16,9 +16,12 @@ export function showDataBaby() {
 
   generateCardsContentBaby();
 
-  window.app.stopwatch = setInterval(increaseTime, 1000); // запуск секундомера
+  window.app.stopwatch = window.setInterval(increaseTime, 1000); // запуск секундомера
 
-  window.app.delay = setTimeout(hideCardsBaby, window.app.cardDisplayTime); // время показа карт 5s
+  window.app.delay = window.setTimeout(
+    hideCardsBaby,
+    window.app.cardDisplayTime
+  ); // время показа карт 5s
 
   showCardBaby();
 }
@@ -27,8 +30,8 @@ export function showDataBaby() {
  * Заполнение n карт данными из массива data = shuffle(doubleCards)
  */
 
-function generateCardsContentBaby() {
-  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
+function generateCardsContentBaby(): void {
+  let imgs = document.querySelectorAll<HTMLDivElement>('.card');
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].style.background = `${window.app.cardsForCurrentGame[i]}`;

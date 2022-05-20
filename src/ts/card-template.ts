@@ -1,12 +1,13 @@
 type cardObj = {
   name: string;
   text: string;
-  img: boolean;
+  img: string;
   suit: string;
 };
 
-export function cardTemplate(data: cardObj) {
-  return `<div class="card__content">
+export function cardTemplate(data: cardObj | string): string {
+  if (typeof data !== 'string') {
+    return `<div class="card__content">
   <div class="card__info card__info_top">
     <div class="card__text">${data.text}</div>
     <img
@@ -29,4 +30,5 @@ export function cardTemplate(data: cardObj) {
   </div>
   </div>
   </div>`;
+  } else return '';
 }

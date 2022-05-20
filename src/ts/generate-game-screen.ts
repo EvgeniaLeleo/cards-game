@@ -1,13 +1,12 @@
 import { showData } from './show-data';
 import cardsData from '../data/cards.json';
-
 import { generateStartScreen } from './generate-start-screen';
 
 /**
  * Генерация экрана игры
  */
 
-export function generateGameScreen(container: HTMLDivElement) {
+export function generateGameScreen(container: HTMLDivElement): void {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -90,7 +89,7 @@ export function generateGameScreen(container: HTMLDivElement) {
  * Генерация и вывод карт на экран
  */
 
-function generateCards(container: HTMLDivElement) {
+function generateCards(container: HTMLDivElement): void {
   const cardWidth = 95;
   const cardHeight = 133;
   const gap = 15;
@@ -99,9 +98,11 @@ function generateCards(container: HTMLDivElement) {
   container.style.width =
     numberOfCardsInRow * cardWidth + (numberOfCardsInRow - 1) * gap + 'px';
   container.style.height =
-    window.app.level * cardHeight + (window.app.level - 1) * gap + 'px';
+    Number(window.app.level) * cardHeight +
+    (Number(window.app.level) - 1) * gap +
+    'px';
 
-  for (let i = 0; i < numberOfCardsInRow * window.app.level; i++) {
+  for (let i = 0; i < numberOfCardsInRow * Number(window.app.level); i++) {
     const card = document.createElement('div');
 
     card.classList.add('card');

@@ -11,25 +11,31 @@ import { cardTemplate } from './card-template';
 type cardObj = {
   name: string;
   text: string;
-  img: boolean;
+  img: string;
   suit: string;
 };
 
-export function showData(data: cardObj[]) {
+function isObjArray(arg: (cardObj | string)[]): arg is cardObj[] {
+  return typeof arg === 'object';
+}
+
+export function showData(data: cardObj[]): void {
   const dataClone = data.slice();
   const shuffledData = shuffle(dataClone);
-  const randomCards = shuffledData.splice(0, window.app.level * 3);
+  const randomCards = shuffledData.splice(0, Number(window.app.level) * 3);
 
   window.app.cardsForCurrentGame = shuffle(doubleArr(randomCards));
 
-  generateCardsContent(window.app.cardsForCurrentGame);
+  if (isObjArray(window.app.cardsForCurrentGame)) {
+    generateCardsContent(window.app.cardsForCurrentGame);
+  }
 
-  window.app.stopwatch = setInterval(increaseTime, 1000); // запуск секундомера
+  window.app.stopwatch = window.setInterval(increaseTime, 1000); // запуск секундомера
 
-  window.app.delay = setTimeout(
+  window.app.delay = window.setTimeout(
     hideCards,
     window.app.cardDisplayTime +
-      window.app.cardDisplayTimeDelay * (window.app.level - 1)
+      window.app.cardDisplayTimeDelay * (Number(window.app.level) - 1)
   ); // время показа карт 5s, 6s, 7s
 
   showCard();
@@ -39,8 +45,8 @@ export function showData(data: cardObj[]) {
  * Заполнение n карт данными из массива data = shuffle(doubleCards)
  */
 
-function generateCardsContent(data: cardObj[]) {
-  let imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
+function generateCardsContent(data: cardObj[]): void {
+  let imgs = document.querySelectorAll<HTMLDivElement>('.card');
 
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].innerHTML = cardTemplate(data[i]);

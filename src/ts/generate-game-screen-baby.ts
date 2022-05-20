@@ -5,7 +5,7 @@ import { generateStartScreen } from './generate-start-screen';
  * Генерация экрана игры для малышей
  */
 
-export function generateGameScreenBaby(container: HTMLDivElement) {
+export function generateGameScreenBaby(container: HTMLDivElement): void {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -84,7 +84,7 @@ export function generateGameScreenBaby(container: HTMLDivElement) {
  * Генерация и вывод картинок на экран
  */
 
-function generateCardsBaby(container: HTMLDivElement) {
+function generateCardsBaby(container: HTMLDivElement): void {
   const cardsContainer = document.querySelector(
     '.cards-container-baby'
   ) as HTMLDivElement;

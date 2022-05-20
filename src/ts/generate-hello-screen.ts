@@ -4,7 +4,7 @@ import { generateStartScreen } from './generate-start-screen';
  * Генерация приветственного экрана
  */
 
-export function generateHelloScreen(container: HTMLDivElement) {
+export function generateHelloScreen(container: HTMLDivElement): void {
   window.app.userTimeSekMin = [0, 0];
   window.app.guessedPairs = [];
   window.app.userCards = [];
@@ -46,9 +46,8 @@ export function generateHelloScreen(container: HTMLDivElement) {
     age.appendChild(label);
   }
 
-  const labels = document.querySelectorAll(
-    '.user__age_label'
-  ) as NodeListOf<HTMLLabelElement>;
+  const labels =
+    document.querySelectorAll<HTMLLabelElement>('.user__age_label');
   labels[0].innerHTML = '0+';
   labels[1].textContent = '3+';
   labels[2].textContent = '7+';
@@ -59,12 +58,9 @@ export function generateHelloScreen(container: HTMLDivElement) {
 
   formHello.appendChild(buttonStart);
 
-  const userAges = document.querySelectorAll(
-    '.user__age'
-  ) as NodeListOf<HTMLInputElement>;
-  const difficultyLevelLabels = document.querySelectorAll(
-    '.user__age_label'
-  ) as NodeListOf<HTMLLabelElement>;
+  const userAges = document.querySelectorAll<HTMLInputElement>('.user__age');
+  const difficultyLevelLabels =
+    document.querySelectorAll<HTMLLabelElement>('.user__age_label');
 
   /**
    * Смена цвета выбранного уровня сложности

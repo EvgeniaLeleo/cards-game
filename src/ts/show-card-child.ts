@@ -5,53 +5,70 @@ import { generateWinScreen } from './generate-win-screen';
  * Открываем карту по клику
  */
 
-export function showCardChild() {
-  const imgs = document.querySelectorAll('.card') as NodeListOf<HTMLDivElement>;
+type cardObj = {
+  name: string;
+  text: string;
+  img: string;
+  suit: string;
+};
 
-  for (let i = 0; i < imgs.length; i++) {
-    imgs[i].addEventListener('click', () => {
-      imgs[
-        i
-      ].innerHTML = `<img class="img-child" src="${window.app.cardsForCurrentGame[i].img}" alt="${window.app.cardsForCurrentGame[i].name}" />`;
-      imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
+function isObjArray(arg: (cardObj | string)[]): arg is cardObj[] {
+  return typeof arg === 'object';
+}
 
-      // добавляем пару выбранных карт в window.app.userCards
-      if (!window.app.userCards[0] && !window.app.userTargets.includes(i)) {
-        window.app.userCards[0] = window.app.cardsForCurrentGame[i].name;
-        window.app.userTargets.push(i);
-      }
+export function showCardChild(): void {
+  const imgs = document.querySelectorAll<HTMLDivElement>('.card');
+  const cardsForCurrentGame = window.app.cardsForCurrentGame;
 
-      if (window.app.userCards[0] && !window.app.userTargets.includes(i)) {
-        window.app.userCards[1] = window.app.cardsForCurrentGame[i].name;
-        window.app.userTargets.push(i);
+  if (isObjArray(cardsForCurrentGame)) {
+    for (let i = 0; i < imgs.length; i++) {
+      imgs[i].addEventListener('click', () => {
+        imgs[
+          i
+        ].innerHTML = `<img class="img-child" src="${cardsForCurrentGame[i].img}" alt="${cardsForCurrentGame[i].name}" />`;
+        imgs[i].style.transform = 'rotateY(180deg) scale(-1, 1)';
 
-        //если карты не совпадают, обнуляем все результаты
-        if (window.app.userCards[0] !== window.app.userCards[1]) {
-          window.app.userCards = [];
-          window.app.userTargets = [];
-          window.app.guessedPairs = [];
-
-          setTimeout(hideCardsChild, window.app.commonDelay);
+        // добавляем пару выбранных карт в window.app.userCards
+        if (!window.app.userCards[0] && !window.app.userTargets.includes(i)) {
+          window.app.userCards[0] = cardsForCurrentGame[i].name;
+          window.app.userTargets.push(i);
         }
 
-        //если карты совпадают, добавляем в список угаданных пар
-        if (
-          window.app.userCards.length > 0 &&
-          window.app.userCards[0] === window.app.userCards[1]
-        ) {
-          if (!window.app.guessedPairs.includes(window.app.userCards[0])) {
-            window.app.guessedPairs.push(window.app.userCards[0]);
+        if (window.app.userCards[0] && !window.app.userTargets.includes(i)) {
+          window.app.userCards[1] = cardsForCurrentGame[i].name;
+          window.app.userTargets.push(i);
+
+          //если карты не совпадают, обнуляем все результаты
+          if (window.app.userCards[0] !== window.app.userCards[1]) {
+            window.app.userCards = [];
+            window.app.userTargets = [];
+            window.app.guessedPairs = [];
+
+            setTimeout(hideCardsChild, window.app.commonDelay);
           }
 
-          window.app.userCards = [];
+          //если карты совпадают, добавляем в список угаданных пар
+          if (
+            window.app.userCards.length > 0 &&
+            window.app.userCards[0] === window.app.userCards[1]
+          ) {
+            if (!window.app.guessedPairs.includes(window.app.userCards[0])) {
+              window.app.guessedPairs.push(window.app.userCards[0]);
+            }
 
-          if (window.app.guessedPairs.length === window.app.level * 3) {
-            clearInterval(window.app.stopwatch);
+            window.app.userCards = [];
 
-            setTimeout(generateWinScreen, window.app.commonDelay);
+            if (
+              window.app.guessedPairs.length ===
+              Number(window.app.level) * 3
+            ) {
+              clearInterval(window.app.stopwatch);
+
+              setTimeout(generateWinScreen, window.app.commonDelay);
+            }
           }
         }
-      }
-    });
+      });
+    }
   }
 }
