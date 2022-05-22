@@ -2,7 +2,7 @@
   "name": "memory-game",
   "version": "1.0.0",
   "description": "Deploy https://evgenialeleo.github.io/cards-game/",
-  "main": "index.js",
+  "main": "./src/ts/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack",
